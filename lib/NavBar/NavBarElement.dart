@@ -14,4 +14,14 @@ class NavBarElement {
       ),
     );
   }
+
+  InkWell inkwellButton({required String ButtonTitle}) {
+    return InkWell(
+      onTap: () {},
+      child: Text(
+        ButtonTitle,
+        style: TextStyle(fontFamily: 'Raleway', color: Colors.white),
+      ),
+    );
+  }
 }
