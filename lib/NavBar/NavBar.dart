@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:app_studio_webstie/NavBar/NavBarElement.dart';
 
-NavBarElement navBarElement = NavBarElement();
+NavBarButton navBarElement = NavBarButton();
 
 class NavBar extends StatelessWidget {
   const NavBar({Key? key}) : super(key: key);

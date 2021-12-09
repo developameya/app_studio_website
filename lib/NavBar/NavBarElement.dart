@@ -1,27 +1,15 @@
 import 'package:flutter/material.dart';
 
-class NavBarElement {
-  MaterialButton button({required String ButtonTitle}) {
-    return MaterialButton(
-      onPressed: () {
-        print(ButtonTitle);
-      },
-      child: Text(
-        ButtonTitle,
-        style: TextStyle(
-          color: Colors.white,
-        ),
-      ),
-    );
-  }
+class NavBarButton extends StatefulWidget {
+  const NavBarButton({Key? key}) : super(key: key);
 
-  InkWell inkwellButton({required String ButtonTitle}) {
-    return InkWell(
-      onTap: () {},
-      child: Text(
-        ButtonTitle,
-        style: TextStyle(fontFamily: 'Raleway', color: Colors.white),
-      ),
-    );
+  @override
+  _NavBarButtonState createState() => _NavBarButtonState();
+}
+
+class _NavBarButtonState extends State<NavBarButton> {
+  @override
+  Widget build(BuildContext context) {
+    return Container();
   }
 }
