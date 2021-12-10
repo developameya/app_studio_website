@@ -41,14 +41,16 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           children: [
             HeroSection(screenSize: screenSize),
-            SizedBox(height: 200),
+            SizedBox(height: screenSize.width / 8),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 180.0),
+              padding: ResponsiveWidget.isMediumScreen(context)
+                  ? EdgeInsets.symmetric(horizontal: screenSize.width / 50)
+                  : EdgeInsets.symmetric(horizontal: screenSize.width / 8),
               child: FeaturesSection(
                 screenSize: screenSize,
               ),
             ),
-            SizedBox(height: screenSize.width / 10),
+            SizedBox(height: screenSize.width / 8),
             ScreenshotSection(screenSize: screenSize),
             Container(
               width: screenSize.width,

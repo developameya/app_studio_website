@@ -1,3 +1,4 @@
+import 'package:app_studio_webstie/Widgets/ResponsiveWidget.dart';
 import 'package:flutter/material.dart';
 import 'package:app_studio_webstie/Widgets/ScreenshotsElement.dart';
 
@@ -11,7 +12,7 @@ class ScreenshotSection extends StatelessWidget {
       alignment: AlignmentDirectional.bottomStart,
       children: [
         Container(
-          height: screenSize.height / 2,
+          height: screenSize.width / 2.5,
           width: screenSize.width,
           decoration: BoxDecoration(
             gradient: RadialGradient(
@@ -25,7 +26,9 @@ class ScreenshotSection extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: screenSize.width / 8),
+          padding: ResponsiveWidget.isMediumScreen(context)
+              ? EdgeInsets.symmetric(horizontal: screenSize.width / 50)
+              : EdgeInsets.symmetric(horizontal: screenSize.width / 8),
           child: Container(
             child: Column(
               children: [
@@ -45,7 +48,7 @@ class ScreenshotSection extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(height: 50),
+                SizedBox(height: screenSize.width / 30),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [

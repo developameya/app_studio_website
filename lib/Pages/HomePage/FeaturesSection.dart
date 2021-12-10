@@ -1,3 +1,4 @@
+import 'package:app_studio_webstie/Widgets/ResponsiveWidget.dart';
 import 'package:flutter/material.dart';
 import 'package:app_studio_webstie/Widgets/FeaturesElement.dart';
 import 'package:app_studio_webstie/Widgets/Text/TextList.dart';
@@ -39,7 +40,10 @@ class FeaturesSection extends StatelessWidget {
               headerText: textList.getFeatures(at: 0).Header,
               bodyText: textList.getFeatures(at: 0).Body,
             ),
-            SizedBox(width: 300),
+            SizedBox(
+                width: ResponsiveWidget.isMediumScreen(context)
+                    ? screenSize.width / 30
+                    : screenSize.width / 10),
             FeaturesElement(
               imagePath: 'assets/images/circle_and_dots.png',
               headerText: textList.getFeatures(at: 1).Header,
@@ -55,7 +59,10 @@ class FeaturesSection extends StatelessWidget {
               headerText: textList.getFeatures(at: 2).Header,
               bodyText: textList.getFeatures(at: 2).Body,
             ),
-            SizedBox(width: 300),
+            SizedBox(
+                width: ResponsiveWidget.isMediumScreen(context)
+                    ? screenSize.width / 30
+                    : screenSize.width / 10),
             FeaturesElement(
               imagePath: 'assets/images/Trash.png',
               headerText: textList.getFeatures(at: 3).Header,

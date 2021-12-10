@@ -1,3 +1,4 @@
+import 'package:app_studio_webstie/Widgets/ResponsiveWidget.dart';
 import 'package:flutter/material.dart';
 
 class ScreenshotsElement extends StatelessWidget {
@@ -27,7 +28,9 @@ class ScreenshotsElement extends StatelessWidget {
       ),
       child: Image.asset(
         imagePath,
-        height: screenSize.width / 3,
+        height: ResponsiveWidget.isMediumScreen(context)
+            ? screenSize.width / 2
+            : screenSize.width / 2.5,
       ),
     );
   }
