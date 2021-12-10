@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class FeaturesElement extends StatelessWidget {
-  String imagePath;
-  String headerText;
-  String bodyText;
+  final String imagePath;
+  final String headerText;
+  final String bodyText;
   FeaturesElement(
       {required this.imagePath,
       required this.headerText,

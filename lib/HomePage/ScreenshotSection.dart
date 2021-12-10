@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'ScreenshotsElement.dart';
 
 class ScreenshotSection extends StatelessWidget {
-  Size screenSize;
+  final Size screenSize;
   ScreenshotSection({required this.screenSize});
 
   @override

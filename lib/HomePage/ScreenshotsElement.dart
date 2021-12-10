@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ScreenshotsElement extends StatelessWidget {
-  String imagePath;
+  final String imagePath;
 
   ScreenshotsElement({required this.imagePath});
 

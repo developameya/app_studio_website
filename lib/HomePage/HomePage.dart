@@ -12,6 +12,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   List _isHovering = [false, false, false, false];
+
   @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;

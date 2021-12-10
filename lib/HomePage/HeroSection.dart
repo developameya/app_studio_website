@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class HeroSection extends StatelessWidget {
-  Size screenSize;
+  final Size screenSize;
   HeroSection({required this.screenSize});
   @override
   Widget build(BuildContext context) {
