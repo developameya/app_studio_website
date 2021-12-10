@@ -25,7 +25,7 @@ class ScreenshotSection extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 180),
+          padding: EdgeInsets.symmetric(horizontal: screenSize.width / 8),
           child: Container(
             child: Column(
               children: [
@@ -50,17 +50,21 @@ class ScreenshotSection extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     ScreenshotsElement(
-                        imagePath:
-                            'assets/images/1-app store screenshot@2x.png'),
+                      imagePath: 'assets/images/1-app store screenshot@2x.png',
+                      screenSize: screenSize,
+                    ),
                     ScreenshotsElement(
-                        imagePath:
-                            'assets/images/2-app store screenshot@2x.png'),
+                      imagePath: 'assets/images/2-app store screenshot@2x.png',
+                      screenSize: screenSize,
+                    ),
                     ScreenshotsElement(
-                        imagePath:
-                            'assets/images/3-app store screenshot@2x.png'),
+                      imagePath: 'assets/images/3-app store screenshot@2x.png',
+                      screenSize: screenSize,
+                    ),
                     ScreenshotsElement(
-                        imagePath:
-                            'assets/images/4-app store screenshot@2x.png'),
+                      imagePath: 'assets/images/4-app store screenshot@2x.png',
+                      screenSize: screenSize,
+                    ),
                   ],
                 ),
                 SizedBox(height: 100),

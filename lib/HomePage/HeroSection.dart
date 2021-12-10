@@ -26,13 +26,17 @@ class HeroSection extends StatelessWidget {
             maxWidth: screenSize.width,
           ),
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 150),
+            padding: EdgeInsets.only(
+              right: screenSize.width / 8,
+              left: screenSize.width / 8,
+              top: screenSize.height / 50,
+            ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Image.asset(
                   'assets/images/iPhone hero image.png',
-                  height: 889,
+                  height: screenSize.width / 1.8,
                 ),
                 SizedBox(width: 80),
                 Expanded(

@@ -137,9 +137,11 @@ class _HomePageState extends State<HomePage> {
             SizedBox(height: 200),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 180.0),
-              child: FeaturesSection(),
+              child: FeaturesSection(
+                screenSize: screenSize,
+              ),
             ),
-            SizedBox(height: 80),
+            SizedBox(height: screenSize.width / 10),
             ScreenshotSection(screenSize: screenSize),
             Container(
               width: screenSize.width,

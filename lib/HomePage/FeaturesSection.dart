@@ -5,34 +5,29 @@ import 'Text/TextList.dart';
 TextList textList = TextList();
 
 class FeaturesSection extends StatelessWidget {
-  const FeaturesSection({Key? key}) : super(key: key);
+  final Size screenSize;
+
+  FeaturesSection({required this.screenSize});
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Padding(
-          padding: const EdgeInsets.only(left: 250),
-          child: Row(
-            children: [
-              Column(
-                children: [
-                  Text(
-                    'Why should you use Signary?',
-                    style: TextStyle(
-                        fontFamily: 'Montserrat',
-                        fontWeight: FontWeight.w200,
-                        fontSize: 40),
-                  ),
-                  Container(
-                    height: 2,
-                    width: 550,
-                    color: Color(0xff998CEB),
-                  ),
-                ],
-              ),
-            ],
-          ),
+        Column(
+          children: [
+            Text(
+              'Why should you use Signary?',
+              style: TextStyle(
+                  fontFamily: 'Montserrat',
+                  fontWeight: FontWeight.w200,
+                  fontSize: 40),
+            ),
+            Container(
+              height: 2,
+              width: 550,
+              color: Color(0xff998CEB),
+            ),
+          ],
         ),
         SizedBox(
           height: 100,

@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 
 class ScreenshotsElement extends StatelessWidget {
   final String imagePath;
+  final Size screenSize;
 
-  ScreenshotsElement({required this.imagePath});
+  ScreenshotsElement({required this.imagePath, required this.screenSize});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +27,7 @@ class ScreenshotsElement extends StatelessWidget {
       ),
       child: Image.asset(
         imagePath,
-        height: 600,
+        height: screenSize.width / 3,
       ),
     );
   }
