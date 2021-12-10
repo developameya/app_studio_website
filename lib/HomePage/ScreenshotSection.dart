@@ -24,67 +24,75 @@ class ScreenshotSection extends StatelessWidget {
             ),
           ),
         ),
-        Container(
-          child: Column(
-            children: [
-              Column(
-                children: [
-                  Text(
-                    'Check it out!',
-                    style: TextStyle(
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 180),
+          child: Container(
+            child: Column(
+              children: [
+                Column(
+                  children: [
+                    Text(
+                      'Check it out!',
+                      style: TextStyle(
+                          fontFamily: 'Montserrat',
+                          fontWeight: FontWeight.w200,
+                          fontSize: 40),
+                    ),
+                    Container(
+                      height: 2,
+                      width: 250,
+                      color: Color(0xff998CEB),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 50),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    ScreenshotsElement(
+                        imagePath:
+                            'assets/images/1-app store screenshot@2x.png'),
+                    ScreenshotsElement(
+                        imagePath:
+                            'assets/images/2-app store screenshot@2x.png'),
+                    ScreenshotsElement(
+                        imagePath:
+                            'assets/images/3-app store screenshot@2x.png'),
+                    ScreenshotsElement(
+                        imagePath:
+                            'assets/images/4-app store screenshot@2x.png'),
+                  ],
+                ),
+                SizedBox(height: 100),
+                Column(
+                  children: [
+                    Text(
+                      'Find Signary on the App Store',
+                      style: TextStyle(
                         fontFamily: 'Montserrat',
                         fontWeight: FontWeight.w200,
-                        fontSize: 40),
-                  ),
-                  Container(
-                    height: 2,
-                    width: 250,
-                    color: Color(0xff998CEB),
-                  ),
-                ],
-              ),
-              SizedBox(height: 50),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  ScreenshotsElement(
-                      imagePath: 'assets/images/1-app store screenshot@2x.png'),
-                  ScreenshotsElement(
-                      imagePath: 'assets/images/2-app store screenshot@2x.png'),
-                  ScreenshotsElement(
-                      imagePath: 'assets/images/3-app store screenshot@2x.png'),
-                  ScreenshotsElement(
-                      imagePath: 'assets/images/4-app store screenshot@2x.png'),
-                ],
-              ),
-              SizedBox(height: 100),
-              Column(
-                children: [
-                  Text(
-                    'Find Signary on the App Store',
-                    style: TextStyle(
-                      fontFamily: 'Montserrat',
-                      fontWeight: FontWeight.w200,
-                      fontSize: 40,
-                      color: Colors.white,
+                        fontSize: 40,
+                        color: Colors.white,
+                      ),
                     ),
-                  ),
-                  Container(
-                    height: 2,
-                    width: 600,
-                    color: Color(0xff998CEB),
-                  ),
-                ],
-              ),
-              SizedBox(height: 100),
-              InkWell(
-                onTap: () {},
-                child: Image.asset(
-                  'assets/images/Icon App Store@2x.png',
-                  width: 150,
+                    Container(
+                      height: 2,
+                      width: 600,
+                      color: Color(0xff998CEB),
+                    ),
+                  ],
                 ),
-              ),
-            ],
+                SizedBox(height: 50),
+                InkWell(
+                  onTap: () {},
+                  child: Image.asset(
+                    'assets/images/Icon App Store@2x.png',
+                    width: 150,
+                  ),
+                ),
+                SizedBox(height: 40),
+              ],
+            ),
           ),
         ),
       ],
