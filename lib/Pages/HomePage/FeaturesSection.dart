@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'FeaturesElement.dart';
-import 'Text/TextList.dart';
+import 'package:app_studio_webstie/Widgets/FeaturesElement.dart';
+import 'package:app_studio_webstie/Widgets/Text/TextList.dart';
 
 TextList textList = TextList();
 

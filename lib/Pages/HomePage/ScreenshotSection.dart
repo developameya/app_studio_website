@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'ScreenshotsElement.dart';
+import 'package:app_studio_webstie/Widgets/ScreenshotsElement.dart';
 
 class ScreenshotSection extends StatelessWidget {
   final Size screenSize;

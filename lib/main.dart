@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:app_studio_webstie/HomePage/HomePage.dart';
+import 'package:app_studio_webstie/Pages/HomePage/HomePage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,6 +19,7 @@ class MyApp extends StatelessWidget {
     precacheImage(
         AssetImage('assets/images/4-app store screenshot@2x.png'), context);
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Ameya App Studio',
       theme: ThemeData(
         visualDensity: VisualDensity.adaptivePlatformDensity,

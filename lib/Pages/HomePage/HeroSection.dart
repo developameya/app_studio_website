@@ -1,3 +1,4 @@
+import 'package:app_studio_webstie/Widgets/ResponsiveWidget.dart';
 import 'package:flutter/material.dart';
 
 class HeroSection extends StatelessWidget {
@@ -8,7 +9,7 @@ class HeroSection extends StatelessWidget {
     return Stack(
       children: [
         Container(
-          height: screenSize.height / 1.5,
+          height: screenSize.width / 2.5,
           width: screenSize.width,
           decoration: BoxDecoration(
             gradient: RadialGradient(
@@ -22,15 +23,18 @@ class HeroSection extends StatelessWidget {
           ),
         ),
         Container(
-          constraints: BoxConstraints(
-            maxWidth: screenSize.width,
-          ),
           child: Padding(
-            padding: EdgeInsets.only(
-              right: screenSize.width / 8,
-              left: screenSize.width / 8,
-              top: screenSize.height / 50,
-            ),
+            padding: ResponsiveWidget.isMediumScreen(context)
+                ? EdgeInsets.only(
+                    right: screenSize.width / 50,
+                    left: screenSize.width / 50,
+                    top: screenSize.height / 50,
+                  )
+                : EdgeInsets.only(
+                    right: screenSize.width / 8,
+                    left: screenSize.width / 8,
+                    top: screenSize.height / 50,
+                  ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
