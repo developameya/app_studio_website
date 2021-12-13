@@ -1,90 +1,100 @@
 import 'package:flutter/material.dart';
+import 'package:app_studio_webstie/NavBar/NavButton.dart';
 
 class MobileDrawer extends StatefulWidget {
-  const MobileDrawer({Key? key}) : super(key: key);
+  final Size screenSize;
+
+  const MobileDrawer({Key? key, required this.screenSize}) : super(key: key);
 
   @override
   _MobileDrawerState createState() => _MobileDrawerState();
 }
 
 class _MobileDrawerState extends State<MobileDrawer> {
-  List _isHovering = [false, false, false, false];
+  bool _isHovering = false;
+  late EdgeInsetsGeometry _padding;
+  late Size _drawerSize;
+  @override
+  void initState() {
+    super.initState();
+    _drawerSize =
+        Size(widget.screenSize.width / 3, widget.screenSize.width / 1.5);
+    _padding = EdgeInsets.symmetric(vertical: _drawerSize.height / 10);
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Drawer(
-      child: Container(
-        color: Color(0xff2C272E),
-        child: Column(
-          children: [
-            InkWell(
-              onHover: (value) {
-                setState(
-                  () {
-                    _isHovering[0] = value;
-                  },
-                );
-              },
-              onTap: () {},
-              child: Text(
-                'FEATURES',
-                style: TextStyle(
-                  fontFamily: 'Raleway',
-                  fontSize: 12,
-                  color: _isHovering[0] ? Colors.blue[200] : Colors.white,
-                ),
+    return Column(
+      children: [
+        Container(
+          width: _drawerSize.width,
+          height: _drawerSize.height,
+          child: Drawer(
+            child: Container(
+              color: Color(0xff2C272E),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: InkWell(
+                      onHover: (value) {
+                        setState(
+                          () {
+                            _isHovering = value;
+                          },
+                        );
+                      },
+                      onTap: () {
+                        Navigator.pop(context);
+                      },
+                      child: Icon(
+                        Icons.close,
+                        size: 30,
+                        color: _isHovering ? Colors.blue[200] : Colors.white,
+                      ),
+                    ),
+                  ),
+                  Column(
+                    children: [
+                      Padding(
+                        padding: _padding,
+                        child: NavButton(
+                          title: 'features',
+                          onTap: () {},
+                        ),
+                      ),
+                      Padding(
+                        padding: _padding,
+                        child: NavButton(
+                          title: 'screenshots',
+                          onTap: () {},
+                        ),
+                      ),
+                      Padding(
+                        padding: _padding,
+                        child: NavButton(
+                          title: 'blog',
+                          onTap: () {},
+                        ),
+                      ),
+                      Padding(
+                        padding: _padding,
+                        child: NavButton(
+                          title: 'contact',
+                          onTap: () {},
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(width: 32),
+                ],
               ),
             ),
-            InkWell(
-              onHover: (value) {
-                setState(() {
-                  _isHovering[1] = value;
-                });
-              },
-              onTap: () {},
-              child: Text(
-                'SCREENSHOTS',
-                style: TextStyle(
-                  fontFamily: 'Raleway',
-                  fontSize: 12,
-                  color: _isHovering[1] ? Colors.blue[200] : Colors.white,
-                ),
-              ),
-            ),
-            InkWell(
-              onHover: (value) {
-                setState(() {
-                  _isHovering[2] = value;
-                });
-              },
-              onTap: () {},
-              child: Text(
-                'BLOG',
-                style: TextStyle(
-                  fontFamily: 'Raleway',
-                  fontSize: 12,
-                  color: _isHovering[2] ? Colors.blue[200] : Colors.white,
-                ),
-              ),
-            ),
-            InkWell(
-              onHover: (value) {
-                setState(() {
-                  _isHovering[3] = value;
-                });
-              },
-              onTap: () {},
-              child: Text(
-                'CONTACT',
-                style: TextStyle(
-                  fontFamily: 'Raleway',
-                  fontSize: 12,
-                  color: _isHovering[3] ? Colors.blue[200] : Colors.white,
-                ),
-              ),
-            ),
-          ],
+          ),
         ),
-      ),
+      ],
     );
   }
 }

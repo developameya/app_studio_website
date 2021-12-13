@@ -14,8 +14,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  List _isHovering = [false, false, false, false];
-
   @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
@@ -24,10 +22,14 @@ class _HomePageState extends State<HomePage> {
       appBar: ResponsiveWidget.isSmallScreen(context)
           ? AppBar(
               title: Padding(
-                padding: EdgeInsets.all(screenSize.width / 4),
+                padding: EdgeInsets.fromLTRB(
+                    screenSize.width / 6,
+                    screenSize.width / 4,
+                    screenSize.width / 4,
+                    screenSize.width / 4),
                 child: Image.asset(
                   'assets/images/Icon_App_Studio@2x.png',
-                  // height: 25,
+                  height: 54,
                 ),
               ),
               backgroundColor: Color(0xff2C272E),
@@ -36,7 +38,7 @@ class _HomePageState extends State<HomePage> {
               preferredSize: Size(screenSize.width, screenSize.width / 40),
               child: DesktopNavBar(screenSize: screenSize),
             ),
-      drawer: MobileDrawer(),
+      drawer: MobileDrawer(screenSize: screenSize),
       body: SingleChildScrollView(
         child: Column(
           children: [

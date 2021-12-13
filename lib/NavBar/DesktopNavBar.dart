@@ -1,8 +1,6 @@
 import 'package:app_studio_webstie/Widgets/ResponsiveWidget.dart';
 import 'package:flutter/material.dart';
-import 'package:app_studio_webstie/NavBar/NavBarElement.dart';
-
-NavBarButton navBarElement = NavBarButton();
+import 'package:app_studio_webstie/NavBar/NavButton.dart';
 
 class DesktopNavBar extends StatefulWidget {
   final Size screenSize;
@@ -16,7 +14,6 @@ class DesktopNavBar extends StatefulWidget {
 }
 
 class _DesktopNavBarState extends State<DesktopNavBar> {
-  List _isHovering = [false, false, false, false];
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -47,77 +44,27 @@ class _DesktopNavBarState extends State<DesktopNavBar> {
                   'assets/images/Icon_App_Studio@2x.png',
                 ),
                 SizedBox(width: 30),
-                InkWell(
-                  onHover: (value) {
-                    setState(
-                      () {
-                        _isHovering[0] = value;
-                      },
-                    );
-                  },
+                NavButton(
+                  title: 'features',
                   onTap: () {},
-                  child: Text(
-                    'FEATURES',
-                    style: TextStyle(
-                      fontFamily: 'Raleway',
-                      fontSize: 12,
-                      color: _isHovering[0] ? Colors.blue[200] : Colors.white,
-                    ),
-                  ),
                 ),
                 SizedBox(width: 30),
-                InkWell(
-                  onHover: (value) {
-                    setState(() {
-                      _isHovering[1] = value;
-                    });
-                  },
+                NavButton(
+                  title: 'screenshots',
                   onTap: () {},
-                  child: Text(
-                    'SCREENSHOTS',
-                    style: TextStyle(
-                      fontFamily: 'Raleway',
-                      fontSize: 12,
-                      color: _isHovering[1] ? Colors.blue[200] : Colors.white,
-                    ),
-                  ),
                 ),
               ],
             ),
             Row(
               children: [
-                InkWell(
-                  onHover: (value) {
-                    setState(() {
-                      _isHovering[2] = value;
-                    });
-                  },
+                NavButton(
+                  title: 'blog',
                   onTap: () {},
-                  child: Text(
-                    'BLOG',
-                    style: TextStyle(
-                      fontFamily: 'Raleway',
-                      fontSize: 12,
-                      color: _isHovering[2] ? Colors.blue[200] : Colors.white,
-                    ),
-                  ),
                 ),
                 SizedBox(width: 30),
-                InkWell(
-                  onHover: (value) {
-                    setState(() {
-                      _isHovering[3] = value;
-                    });
-                  },
+                NavButton(
+                  title: 'contact',
                   onTap: () {},
-                  child: Text(
-                    'CONTACT',
-                    style: TextStyle(
-                      fontFamily: 'Raleway',
-                      fontSize: 12,
-                      color: _isHovering[3] ? Colors.blue[200] : Colors.white,
-                    ),
-                  ),
                 ),
               ],
             ),
