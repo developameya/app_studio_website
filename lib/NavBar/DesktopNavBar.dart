@@ -1,7 +1,7 @@
 import 'package:app_studio_webstie/Widgets/ResponsiveWidget.dart';
 import 'package:app_studio_webstie/Constants/AppColors.dart';
 import 'package:flutter/material.dart';
-import 'package:app_studio_webstie/NavBar/NavButton.dart';
+import 'package:app_studio_webstie/Widgets/NavButton.dart';
 
 import '../Constants/AppImages.dart';
 

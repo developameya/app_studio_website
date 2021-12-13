@@ -3,6 +3,7 @@ import 'package:app_studio_webstie/Constants/AppImages.dart';
 import 'package:app_studio_webstie/NavBar/DesktopNavBar.dart';
 import 'package:app_studio_webstie/NavBar/MobileDrawer.dart';
 import 'package:app_studio_webstie/Pages/HomePage/DesktopHomePage.dart';
+import 'package:app_studio_webstie/Pages/HomePage/MobileHomePage.dart';
 import 'package:app_studio_webstie/Widgets/ResponsiveWidget.dart';
 import 'package:flutter/material.dart';
 
@@ -39,7 +40,9 @@ class _HomePageState extends State<HomePage> {
               child: DesktopNavBar(screenSize: screenSize),
             ),
       drawer: MobileDrawer(screenSize: screenSize),
-      body: DesktopHomePage(screenSize: screenSize),
+      body: ResponsiveWidget.isSmallScreen(context)
+          ? MobileHomePage(screenSize: screenSize)
+          : DesktopHomePage(screenSize: screenSize),
     );
   }
 }
