@@ -1,3 +1,4 @@
+import 'package:app_studio_webstie/Constants/AppColors.dart';
 import 'package:flutter/material.dart';
 import 'package:app_studio_webstie/NavBar/NavButton.dart';
 
@@ -31,7 +32,7 @@ class _MobileDrawerState extends State<MobileDrawer> {
           height: _drawerSize.height,
           child: Drawer(
             child: Container(
-              color: Color(0xff2C272E),
+              color: headerColor,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.start,

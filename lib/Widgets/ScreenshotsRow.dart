@@ -1,11 +1,11 @@
 import 'package:app_studio_webstie/Widgets/ResponsiveWidget.dart';
 import 'package:flutter/material.dart';
 
-class ScreenshotsElement extends StatelessWidget {
+class ScreenshotsRow extends StatelessWidget {
   final String imagePath;
   final Size screenSize;
 
-  ScreenshotsElement({required this.imagePath, required this.screenSize});
+  ScreenshotsRow({required this.imagePath, required this.screenSize});
 
   @override
   Widget build(BuildContext context) {

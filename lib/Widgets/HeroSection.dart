@@ -1,5 +1,8 @@
 import 'package:app_studio_webstie/Widgets/ResponsiveWidget.dart';
+import 'package:app_studio_webstie/Constants/AppColors.dart';
 import 'package:flutter/material.dart';
+
+import '../Constants/AppImages.dart';
 
 class HeroSection extends StatelessWidget {
   final Size screenSize;
@@ -12,14 +15,7 @@ class HeroSection extends StatelessWidget {
           height: screenSize.width / 2.5,
           width: screenSize.width,
           decoration: BoxDecoration(
-            gradient: RadialGradient(
-              center: Alignment(-3, -5),
-              radius: 10,
-              colors: [
-                Color(0xff998CEB),
-                Color(0xff4D4676),
-              ],
-            ),
+            gradient: radialGradient,
           ),
         ),
         Container(
@@ -39,7 +35,7 @@ class HeroSection extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Image.asset(
-                  'assets/images/iPhone hero image.png',
+                  heroImage,
                   height: screenSize.width / 1.8,
                 ),
                 SizedBox(width: 80),
@@ -70,7 +66,7 @@ class HeroSection extends StatelessWidget {
                       InkWell(
                         onTap: () {},
                         child: Image.asset(
-                          'assets/images/Icon App Store@2x.png',
+                          appStoreIconImage,
                           width: 150,
                         ),
                       ),

@@ -1,6 +1,8 @@
+import 'package:app_studio_webstie/Constants/AppColors.dart';
+import 'package:app_studio_webstie/Constants/AppImages.dart';
 import 'package:app_studio_webstie/Widgets/ResponsiveWidget.dart';
 import 'package:flutter/material.dart';
-import 'package:app_studio_webstie/Widgets/ScreenshotsElement.dart';
+import 'package:app_studio_webstie/Widgets/ScreenshotsRow.dart';
 
 class ScreenshotSection extends StatelessWidget {
   final Size screenSize;
@@ -15,14 +17,7 @@ class ScreenshotSection extends StatelessWidget {
           height: screenSize.width / 2.5,
           width: screenSize.width,
           decoration: BoxDecoration(
-            gradient: RadialGradient(
-              center: Alignment(-3, -5),
-              radius: 10,
-              colors: [
-                Color(0xff998CEB),
-                Color(0xff4D4676),
-              ],
-            ),
+            gradient: radialGradient,
           ),
         ),
         Padding(
@@ -44,7 +39,7 @@ class ScreenshotSection extends StatelessWidget {
                     Container(
                       height: 2,
                       width: 250,
-                      color: Color(0xff998CEB),
+                      color: primaryColor,
                     ),
                   ],
                 ),
@@ -52,20 +47,20 @@ class ScreenshotSection extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    ScreenshotsElement(
-                      imagePath: 'assets/images/1-app store screenshot@2x.png',
+                    ScreenshotsRow(
+                      imagePath: screenshots[0],
                       screenSize: screenSize,
                     ),
-                    ScreenshotsElement(
-                      imagePath: 'assets/images/2-app store screenshot@2x.png',
+                    ScreenshotsRow(
+                      imagePath: screenshots[1],
                       screenSize: screenSize,
                     ),
-                    ScreenshotsElement(
-                      imagePath: 'assets/images/3-app store screenshot@2x.png',
+                    ScreenshotsRow(
+                      imagePath: screenshots[2],
                       screenSize: screenSize,
                     ),
-                    ScreenshotsElement(
-                      imagePath: 'assets/images/4-app store screenshot@2x.png',
+                    ScreenshotsRow(
+                      imagePath: screenshots[3],
                       screenSize: screenSize,
                     ),
                   ],

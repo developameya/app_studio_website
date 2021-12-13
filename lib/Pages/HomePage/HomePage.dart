@@ -1,8 +1,8 @@
+import 'package:app_studio_webstie/Constants/AppColors.dart';
+import 'package:app_studio_webstie/Constants/AppImages.dart';
 import 'package:app_studio_webstie/NavBar/DesktopNavBar.dart';
 import 'package:app_studio_webstie/NavBar/MobileDrawer.dart';
-import 'package:app_studio_webstie/Pages/HomePage/FeaturesSection.dart';
-import 'package:app_studio_webstie/Pages/HomePage/HeroSection.dart';
-import 'package:app_studio_webstie/Pages/HomePage/ScreenshotSection.dart';
+import 'package:app_studio_webstie/Pages/HomePage/DesktopHomePage.dart';
 import 'package:app_studio_webstie/Widgets/ResponsiveWidget.dart';
 import 'package:flutter/material.dart';
 
@@ -28,49 +28,18 @@ class _HomePageState extends State<HomePage> {
                     screenSize.width / 4,
                     screenSize.width / 4),
                 child: Image.asset(
-                  'assets/images/Icon_App_Studio@2x.png',
+                  logoImage,
                   height: 54,
                 ),
               ),
-              backgroundColor: Color(0xff2C272E),
+              backgroundColor: headerColor,
             )
           : PreferredSize(
               preferredSize: Size(screenSize.width, screenSize.width / 40),
               child: DesktopNavBar(screenSize: screenSize),
             ),
       drawer: MobileDrawer(screenSize: screenSize),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            HeroSection(screenSize: screenSize),
-            SizedBox(height: screenSize.width / 8),
-            Padding(
-              padding: ResponsiveWidget.isMediumScreen(context)
-                  ? EdgeInsets.symmetric(horizontal: screenSize.width / 50)
-                  : EdgeInsets.symmetric(horizontal: screenSize.width / 8),
-              child: FeaturesSection(
-                screenSize: screenSize,
-              ),
-            ),
-            SizedBox(height: screenSize.width / 8),
-            ScreenshotSection(screenSize: screenSize),
-            Container(
-              width: screenSize.width,
-              height: 30,
-              color: Color(0xff2C272E),
-              child: Center(
-                child: Text(
-                  'Copyright ©2021 Ameya App Studio',
-                  style: TextStyle(
-                    fontFamily: 'Raleway',
-                    color: Colors.white,
-                  ),
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
+      body: DesktopHomePage(screenSize: screenSize),
     );
   }
 }

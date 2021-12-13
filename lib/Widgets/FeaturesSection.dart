@@ -1,7 +1,9 @@
+import 'package:app_studio_webstie/Constants/AppColors.dart';
+import 'package:app_studio_webstie/Constants/AppImages.dart';
 import 'package:app_studio_webstie/Widgets/ResponsiveWidget.dart';
 import 'package:flutter/material.dart';
-import 'package:app_studio_webstie/Widgets/FeaturesElement.dart';
-import 'package:app_studio_webstie/Widgets/Text/TextList.dart';
+import 'package:app_studio_webstie/Widgets/FeaturesColumn.dart';
+import 'package:app_studio_webstie/Constants/Text/TextList.dart';
 
 TextList textList = TextList();
 
@@ -26,7 +28,7 @@ class FeaturesSection extends StatelessWidget {
             Container(
               height: 2,
               width: 550,
-              color: Color(0xff998CEB),
+              color: primaryColor,
             ),
           ],
         ),
@@ -35,8 +37,8 @@ class FeaturesSection extends StatelessWidget {
         ),
         Row(
           children: [
-            FeaturesElement(
-              imagePath: 'assets/images/square_and_pencil.png',
+            FeaturesColumn(
+              imagePath: featuresImages[0],
               headerText: textList.getFeatures(at: 0).Header,
               bodyText: textList.getFeatures(at: 0).Body,
             ),
@@ -44,8 +46,8 @@ class FeaturesSection extends StatelessWidget {
                 width: ResponsiveWidget.isMediumScreen(context)
                     ? screenSize.width / 30
                     : screenSize.width / 10),
-            FeaturesElement(
-              imagePath: 'assets/images/circle_and_dots.png',
+            FeaturesColumn(
+              imagePath: featuresImages[1],
               headerText: textList.getFeatures(at: 1).Header,
               bodyText: textList.getFeatures(at: 1).Body,
             ),
@@ -54,8 +56,8 @@ class FeaturesSection extends StatelessWidget {
         SizedBox(height: 100),
         Row(
           children: [
-            FeaturesElement(
-              imagePath: 'assets/images/pencil.png',
+            FeaturesColumn(
+              imagePath: featuresImages[2],
               headerText: textList.getFeatures(at: 2).Header,
               bodyText: textList.getFeatures(at: 2).Body,
             ),
@@ -63,8 +65,8 @@ class FeaturesSection extends StatelessWidget {
                 width: ResponsiveWidget.isMediumScreen(context)
                     ? screenSize.width / 30
                     : screenSize.width / 10),
-            FeaturesElement(
-              imagePath: 'assets/images/Trash.png',
+            FeaturesColumn(
+              imagePath: featuresImages[3],
               headerText: textList.getFeatures(at: 3).Header,
               bodyText: textList.getFeatures(at: 3).Body,
             ),

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class FeaturesElement extends StatelessWidget {
+class FeaturesColumn extends StatelessWidget {
   final String imagePath;
   final String headerText;
   final String bodyText;
-  FeaturesElement(
+  FeaturesColumn(
       {required this.imagePath,
       required this.headerText,
       required this.bodyText});
