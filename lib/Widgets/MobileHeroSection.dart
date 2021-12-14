@@ -14,10 +14,11 @@ class _MobileHeroSectionState extends State<MobileHeroSection> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: widget.screenSize.height,
+      height: widget.screenSize.width * 1.8,
       decoration: BoxDecoration(
         gradient: radialGradient,
       ),
+      child: Column(),
     );
   }
 }

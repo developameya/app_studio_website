@@ -1,8 +1,12 @@
+import 'package:app_studio_webstie/Constants/AppText.dart';
+import 'package:app_studio_webstie/Widgets/TextFormatter.dart';
 import 'package:app_studio_webstie/Widgets/ResponsiveWidget.dart';
 import 'package:app_studio_webstie/Constants/AppColors.dart';
 import 'package:flutter/material.dart';
 
 import '../Constants/AppImages.dart';
+
+TextFormatter heroText = TextFormatter();
 
 class HeroSection extends StatelessWidget {
   final Size screenSize;
@@ -43,25 +47,9 @@ class HeroSection extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Text(
-                        'Curabitur dapibus arcu leo.',
-                        style: TextStyle(
-                          fontFamily: 'Montserrat',
-                          fontWeight: FontWeight.w100,
-                          color: Colors.white,
-                          fontSize: 40,
-                        ),
-                      ),
+                      heroText.heroHeader(text: heroHeaderText),
                       SizedBox(height: 5),
-                      Text(
-                        'Sed velit lectus, porttitor eu convallis sit amet, semper eget mauris. Integer in pulvinar mauris. Donec facilisis placerat magna sed cursus.',
-                        style: TextStyle(
-                          fontFamily: 'Montserrat',
-                          fontWeight: FontWeight.w500,
-                          color: Colors.white,
-                          fontSize: 28,
-                        ),
-                      ),
+                      heroText.heroSubHeader(text: heroHeaderBlurb),
                       SizedBox(height: 80),
                       InkWell(
                         onTap: () {},
