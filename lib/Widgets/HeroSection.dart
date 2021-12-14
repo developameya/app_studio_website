@@ -16,7 +16,7 @@ class HeroSection extends StatelessWidget {
     return Stack(
       children: [
         Container(
-          height: screenSize.width / 2.5,
+          height: screenSize.width / 2.2,
           width: screenSize.width,
           decoration: BoxDecoration(
             gradient: radialGradient,
@@ -33,14 +33,14 @@ class HeroSection extends StatelessWidget {
                 : EdgeInsets.only(
                     right: screenSize.width / 8,
                     left: screenSize.width / 8,
-                    top: screenSize.height / 50,
+                    top: screenSize.width / 500,
                   ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Image.asset(
                   heroImage,
-                  height: screenSize.width / 1.8,
+                  height: screenSize.width / 1.5,
                 ),
                 SizedBox(width: 80),
                 Expanded(

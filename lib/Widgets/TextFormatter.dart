@@ -47,4 +47,15 @@ class TextFormatter {
       ),
     );
   }
+
+  Text navButtonText({required String text, Color? color, double? fontSize}) {
+    return Text(
+      text.toUpperCase(),
+      style: TextStyle(
+        fontFamily: 'Raleway',
+        fontSize: fontSize ?? 12,
+        color: color,
+      ),
+    );
+  }
 }
