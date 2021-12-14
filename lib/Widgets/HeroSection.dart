@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 
 import '../Constants/AppImages.dart';
 
-TextFormatter heroText = TextFormatter();
+TextFormatter _textFormatter = TextFormatter();
 
 class HeroSection extends StatelessWidget {
   final Size screenSize;
@@ -47,9 +47,9 @@ class HeroSection extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      heroText.heroHeader(text: heroHeaderText),
+                      _textFormatter.heroHeader(text: heroHeaderText),
                       SizedBox(height: 5),
-                      heroText.heroSubHeader(text: heroHeaderBlurb),
+                      _textFormatter.heroSubHeader(text: heroHeaderBlurb),
                       SizedBox(height: 80),
                       InkWell(
                         onTap: () {},

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'TextFormatter.dart';
 
-TextFormatter textFormatter = TextFormatter();
+TextFormatter _textFormatter = TextFormatter();
 
 class FeaturesColumn extends StatelessWidget {
   final String imagePath;
@@ -22,11 +22,11 @@ class FeaturesColumn extends StatelessWidget {
               height: 80,
             ),
             SizedBox(height: 10),
-            textFormatter.featuresHeader(text: headerText),
+            _textFormatter.featuresHeader(text: headerText),
             SizedBox(height: 15),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25),
-              child: textFormatter.featuresSubHeader(text: bodyText),
+              child: _textFormatter.featuresSubHeader(text: bodyText),
             ),
           ],
         ),
