@@ -10,14 +10,17 @@ TextFormatter _textFormatter = TextFormatter();
 
 class HeroSection extends StatelessWidget {
   final Size screenSize;
+  late Size _backgroundConatainerDimensions =
+      Size(screenSize.width, screenSize.width / 2.2);
+
   HeroSection({required this.screenSize});
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
         Container(
-          height: screenSize.width / 2.2,
-          width: screenSize.width,
+          height: _backgroundConatainerDimensions.height,
+          width: _backgroundConatainerDimensions.width,
           decoration: BoxDecoration(
             gradient: radialGradient,
           ),
@@ -33,14 +36,16 @@ class HeroSection extends StatelessWidget {
                 : EdgeInsets.only(
                     right: screenSize.width / 8,
                     left: screenSize.width / 8,
-                    top: screenSize.width / 500,
+                    top: screenSize.width / 50,
                   ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Image.asset(
                   heroImage,
-                  height: screenSize.width / 1.5,
+                  height: ResponsiveWidget.isMediumScreen(context)
+                      ? _backgroundConatainerDimensions.height * 1.5
+                      : screenSize.width / 1.8,
                 ),
                 SizedBox(width: 80),
                 Expanded(

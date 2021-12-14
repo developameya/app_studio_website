@@ -4,6 +4,7 @@ class TextFormatter {
   Text heroHeader({required String text, double? fontSize}) {
     return Text(
       text,
+      textAlign: TextAlign.center,
       style: TextStyle(
         fontFamily: 'Montserrat',
         fontWeight: FontWeight.w100,
