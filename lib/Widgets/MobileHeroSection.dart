@@ -52,7 +52,7 @@ class _MobileHeroSectionState extends State<MobileHeroSection> {
               ),
               Image.asset(
                 heroImage,
-                height: _containerHeight / 1.2,
+                width: _containerHeight / 2,
               ),
             ],
           ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:app_studio_webstie/Constants/AppColors.dart';
 
 class TextFormatter {
   Text heroHeader({required String text, double? fontSize}) {
@@ -57,6 +58,32 @@ class TextFormatter {
         fontSize: fontSize ?? 12,
         color: color,
       ),
+    );
+  }
+
+  Column sectionHeader(
+      {required String text,
+      Color? textColor,
+      double? fontSize,
+      required double lineWidth}) {
+    return Column(
+      children: [
+        Text(
+          text,
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            fontFamily: 'Montserrat',
+            fontWeight: FontWeight.w200,
+            fontSize: fontSize ?? 40,
+            color: textColor,
+          ),
+        ),
+        Container(
+          height: 2,
+          width: lineWidth,
+          color: primaryColor,
+        ),
+      ],
     );
   }
 }

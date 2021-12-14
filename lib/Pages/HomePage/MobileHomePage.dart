@@ -1,3 +1,4 @@
+import 'package:app_studio_webstie/Widgets/MobileFeaturesSection.dart';
 import 'package:flutter/material.dart';
 import 'package:app_studio_webstie/Widgets/MobileHeroSection.dart';
 
@@ -14,7 +15,14 @@ class _MobileHomePageState extends State<MobileHomePage> {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Column(
-        children: [MobileHeroSection(screenSize: widget.screenSize)],
+        children: [
+          MobileHeroSection(screenSize: widget.screenSize),
+          SizedBox(height: 50),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 30),
+            child: MobileFeaturesSection(screenSize: widget.screenSize),
+          ),
+        ],
       ),
     );
   }

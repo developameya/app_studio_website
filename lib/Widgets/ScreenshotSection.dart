@@ -3,6 +3,10 @@ import 'package:app_studio_webstie/Constants/AppImages.dart';
 import 'package:app_studio_webstie/Widgets/ResponsiveWidget.dart';
 import 'package:flutter/material.dart';
 import 'package:app_studio_webstie/Widgets/ScreenshotsRow.dart';
+import 'package:app_studio_webstie/Constants/AppText.dart';
+import 'package:app_studio_webstie/Widgets/TextFormatter.dart';
+
+TextFormatter _textFormatter = TextFormatter();
 
 class ScreenshotSection extends StatelessWidget {
   final Size screenSize;
@@ -27,22 +31,8 @@ class ScreenshotSection extends StatelessWidget {
           child: Container(
             child: Column(
               children: [
-                Column(
-                  children: [
-                    Text(
-                      'Check it out!',
-                      style: TextStyle(
-                          fontFamily: 'Montserrat',
-                          fontWeight: FontWeight.w200,
-                          fontSize: 40),
-                    ),
-                    Container(
-                      height: 2,
-                      width: 250,
-                      color: primaryColor,
-                    ),
-                  ],
-                ),
+                _textFormatter.sectionHeader(
+                    text: screenshotHeaderText, lineWidth: 250),
                 SizedBox(height: screenSize.width / 30),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -66,23 +56,10 @@ class ScreenshotSection extends StatelessWidget {
                   ],
                 ),
                 SizedBox(height: 100),
-                Column(
-                  children: [
-                    Text(
-                      'Find Signary on the App Store',
-                      style: TextStyle(
-                        fontFamily: 'Montserrat',
-                        fontWeight: FontWeight.w200,
-                        fontSize: 40,
-                        color: Colors.white,
-                      ),
-                    ),
-                    Container(
-                      height: 2,
-                      width: 600,
-                      color: Color(0xff998CEB),
-                    ),
-                  ],
+                _textFormatter.sectionHeader(
+                  text: appStoreHeaderText,
+                  lineWidth: 600,
+                  textColor: Colors.white,
                 ),
                 SizedBox(height: 50),
                 InkWell(
