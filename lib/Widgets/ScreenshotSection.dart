@@ -32,7 +32,9 @@ class ScreenshotSection extends StatelessWidget {
             child: Column(
               children: [
                 _textFormatter.sectionHeader(
-                    text: screenshotHeaderText, lineWidth: 250),
+                  text: screenshotHeaderText,
+                  lineWidth: 250,
+                ),
                 SizedBox(height: screenSize.width / 30),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -59,6 +61,7 @@ class ScreenshotSection extends StatelessWidget {
                 _textFormatter.sectionHeader(
                   text: appStoreHeaderText,
                   lineWidth: 600,
+                  lineColor: secondaryColor,
                   textColor: Colors.white,
                 ),
                 SizedBox(height: 50),

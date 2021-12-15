@@ -55,7 +55,7 @@ class TextFormatter {
       text.toUpperCase(),
       style: TextStyle(
         fontFamily: 'Raleway',
-        fontSize: fontSize ?? 12,
+        fontSize: fontSize ?? 14,
         color: color,
       ),
     );
@@ -65,7 +65,8 @@ class TextFormatter {
       {required String text,
       Color? textColor,
       double? fontSize,
-      required double lineWidth}) {
+      required double lineWidth,
+      Color? lineColor}) {
     return Column(
       children: [
         Text(
@@ -81,9 +82,21 @@ class TextFormatter {
         Container(
           height: 2,
           width: lineWidth,
-          color: primaryColor,
+          color: lineColor ?? primaryColor,
         ),
       ],
+    );
+  }
+
+  Text body({required String text, Color? textColor, double? fontSize}) {
+    return Text(
+      text,
+      textAlign: TextAlign.center,
+      style: TextStyle(
+        fontFamily: 'Raleway',
+        fontSize: fontSize ?? 24,
+        color: textColor ?? Colors.black,
+      ),
     );
   }
 }

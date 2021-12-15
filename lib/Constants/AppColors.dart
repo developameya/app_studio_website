@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 const headerColor = Color(0xff2C272E);
 const primaryColor = Color(0xff998CEB);
+const secondaryColor = Color(0xfffbf46d);
 const radialGradient = RadialGradient(
   center: Alignment(-3, -5),
   radius: 10,

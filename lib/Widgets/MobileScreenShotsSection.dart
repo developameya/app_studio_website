@@ -30,7 +30,9 @@ class _MobileScreenShotsSectionState extends State<MobileScreenShotsSection> {
         Column(
           children: [
             _textFormatter.sectionHeader(
-                text: screenshotHeaderText, lineWidth: 250),
+              text: screenshotHeaderText,
+              lineWidth: 250,
+            ),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 8.0),
               child: ScreenShotCarousel(),
@@ -38,7 +40,8 @@ class _MobileScreenShotsSectionState extends State<MobileScreenShotsSection> {
             _textFormatter.sectionHeader(
               text: appStoreHeaderText,
               fontSize: 28,
-              lineWidth: 400,
+              lineWidth: 420,
+              lineColor: secondaryColor,
               textColor: Colors.white,
             ),
             Padding(
