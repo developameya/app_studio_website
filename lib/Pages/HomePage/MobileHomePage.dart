@@ -1,4 +1,6 @@
+import 'package:app_studio_webstie/Widgets/Footer.dart';
 import 'package:app_studio_webstie/Widgets/MobileFeaturesSection.dart';
+import 'package:app_studio_webstie/Widgets/MobileScreenShotsSection.dart';
 import 'package:flutter/material.dart';
 import 'package:app_studio_webstie/Widgets/MobileHeroSection.dart';
 
@@ -19,9 +21,14 @@ class _MobileHomePageState extends State<MobileHomePage> {
           MobileHeroSection(screenSize: widget.screenSize),
           SizedBox(height: 50),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 30),
+            padding: const EdgeInsets.symmetric(horizontal: 20),
             child: MobileFeaturesSection(screenSize: widget.screenSize),
           ),
+          SizedBox(height: 50),
+          MobileScreenShotsSection(
+            screenSize: widget.screenSize,
+          ),
+          Footer(screenSize: widget.screenSize),
         ],
       ),
     );

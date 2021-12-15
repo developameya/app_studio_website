@@ -1,5 +1,5 @@
+import 'package:app_studio_webstie/Widgets/Footer.dart';
 import 'package:flutter/material.dart';
-import 'package:app_studio_webstie/Constants/AppColors.dart';
 import 'package:app_studio_webstie/Widgets/FeaturesSection.dart';
 import 'package:app_studio_webstie/Widgets/HeroSection.dart';
 import 'package:app_studio_webstie/Widgets/ScreenshotSection.dart';
@@ -31,20 +31,7 @@ class _DesktopHomePageState extends State<DesktopHomePage> {
           ),
           SizedBox(height: widget.screenSize.width / 8),
           ScreenshotSection(screenSize: widget.screenSize),
-          Container(
-            width: widget.screenSize.width,
-            height: 30,
-            color: headerColor,
-            child: Center(
-              child: Text(
-                'Copyright ©2021 Ameya App Studio',
-                style: TextStyle(
-                  fontFamily: 'Raleway',
-                  color: Colors.white,
-                ),
-              ),
-            ),
-          ),
+          Footer(screenSize: widget.screenSize),
         ],
       ),
     );
