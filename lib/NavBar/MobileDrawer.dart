@@ -18,14 +18,14 @@ class _MobileDrawerState extends State<MobileDrawer> {
   @override
   void initState() {
     super.initState();
-    _drawerSize =
-        Size(widget.screenSize.width / 3, widget.screenSize.width / 1.5);
-    _padding = EdgeInsets.symmetric(vertical: _drawerSize.height / 10);
+    _drawerSize = Size(50 * 4, 50 * 7);
+    _padding = EdgeInsets.symmetric(vertical: 25);
   }
 
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Container(
           width: _drawerSize.width,

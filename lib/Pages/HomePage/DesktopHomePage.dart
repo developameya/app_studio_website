@@ -14,9 +14,16 @@ class DesktopHomePage extends StatefulWidget {
 }
 
 class _DesktopHomePageState extends State<DesktopHomePage> {
+  late ScrollController _scrollController;
   @override
+  void initState() {
+    super.initState();
+    _scrollController = ScrollController();
+  }
+
   Widget build(BuildContext context) {
     return SingleChildScrollView(
+      controller: _scrollController,
       child: Column(
         children: [
           HeroSection(screenSize: widget.screenSize),

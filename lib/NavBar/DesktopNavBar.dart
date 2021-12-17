@@ -1,7 +1,5 @@
 import 'package:app_studio_webstie/Pages/ContactPage.dart';
-import 'package:app_studio_webstie/Pages/PrivacyPolicyPage.dart';
-import 'package:app_studio_webstie/Pages/TermsOfUsePage.dart';
-import 'package:app_studio_webstie/Widgets/LegalPage.dart';
+
 import 'package:app_studio_webstie/Widgets/ResponsiveWidget.dart';
 import 'package:app_studio_webstie/Constants/AppColors.dart';
 import 'package:flutter/material.dart';
@@ -39,6 +37,7 @@ class _DesktopNavBarState extends State<DesktopNavBar> {
               children: [
                 Image.asset(
                   logoImage,
+                  height: widget.screenSize.width / 35,
                 ),
                 SizedBox(width: 30),
                 NavButton(

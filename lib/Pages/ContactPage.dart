@@ -1,6 +1,7 @@
 import 'package:app_studio_webstie/Constants/AppColors.dart';
 import 'package:app_studio_webstie/Constants/AppText.dart';
 import 'package:app_studio_webstie/NavBar/NavBar.dart';
+import 'package:app_studio_webstie/Pages/TermsOfUsePage.dart';
 import 'package:app_studio_webstie/Widgets/Footer.dart';
 import 'package:app_studio_webstie/Widgets/ResponsiveWidget.dart';
 import 'package:app_studio_webstie/Widgets/TextFormatter.dart';
@@ -45,6 +46,31 @@ class ContactPage extends StatelessWidget {
                 text: contactBodyText,
                 textColor: Colors.white,
               ),
+              SizedBox(
+                height: screenSize.width / 30,
+              ),
+              _textFormatter.sectionHeader(
+                text: 'Legal',
+                textColor: Colors.white,
+                lineWidth: 200,
+                lineColor: secondaryColor,
+              ),
+              OutlinedButton(
+                style: ButtonStyle(),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => TermsOfUsePage(),
+                    ),
+                  );
+                },
+                child: _textFormatter.navButtonText(
+                  text: 'Terms Of Use',
+                  color: Colors.white,
+                  fontSize: 24,
+                ),
+              )
             ],
           ),
         ),

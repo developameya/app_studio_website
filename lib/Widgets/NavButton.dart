@@ -15,29 +15,26 @@ class NavButton extends StatefulWidget {
 }
 
 class _NavButtonState extends State<NavButton> {
-  bool _isHovering = false;
+  Color getColor(Set<MaterialState> states) {
+    const Set<MaterialState> interactiveStates = <MaterialState>{
+      MaterialState.pressed,
+      MaterialState.focused,
+      MaterialState.hovered
+    };
+    if (states.any(interactiveStates.contains)) {
+      return Colors.blue[200] ?? Colors.blue;
+    }
+    return Colors.white;
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Row(
-        children: [
-          InkWell(
-            onHover: (value) {
-              setState(
-                () {
-                  _isHovering = value;
-                },
-              );
-            },
-            onTap: widget.onTap,
-            child: _textFormatter.navButtonText(
-              text: widget.title,
-              color: _isHovering ? Colors.blue[200] : Colors.white,
-              fontSize: widget.fontSize,
-            ),
-          ),
-        ],
+    return TextButton(
+      style: ButtonStyle(
+        foregroundColor: MaterialStateProperty.resolveWith(getColor),
       ),
+      onPressed: widget.onTap,
+      child: _textFormatter.navButtonText(text: widget.title),
     );
   }
 }
