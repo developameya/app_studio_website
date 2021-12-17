@@ -1,6 +1,8 @@
 import 'package:app_studio_webstie/Constants/AppColors.dart';
+import 'package:app_studio_webstie/Widgets/NavBarItem.dart';
 import 'package:flutter/material.dart';
-import 'package:app_studio_webstie/Widgets/NavButton.dart';
+
+NavBarItem _navBarItem = NavBarItem();
 
 class MobileDrawer extends StatefulWidget {
   final Size screenSize;
@@ -13,13 +15,11 @@ class MobileDrawer extends StatefulWidget {
 
 class _MobileDrawerState extends State<MobileDrawer> {
   bool _isHovering = false;
-  late EdgeInsetsGeometry _padding;
   late Size _drawerSize;
   @override
   void initState() {
     super.initState();
     _drawerSize = Size(50 * 4, 50 * 7);
-    _padding = EdgeInsets.symmetric(vertical: 25);
   }
 
   @override
@@ -58,36 +58,10 @@ class _MobileDrawerState extends State<MobileDrawer> {
                     ),
                   ),
                   Column(
-                    children: [
-                      Padding(
-                        padding: _padding,
-                        child: NavButton(
-                          title: 'features',
-                          onTap: () {},
-                        ),
-                      ),
-                      Padding(
-                        padding: _padding,
-                        child: NavButton(
-                          title: 'screenshots',
-                          onTap: () {},
-                        ),
-                      ),
-                      Padding(
-                        padding: _padding,
-                        child: NavButton(
-                          title: 'blog',
-                          onTap: () {},
-                        ),
-                      ),
-                      Padding(
-                        padding: _padding,
-                        child: NavButton(
-                          title: 'contact',
-                          onTap: () {},
-                        ),
-                      ),
-                    ],
+                    children: _navBarItem.NavButtonList(
+                      context: context,
+                      verticalPadding: 25.0,
+                    ),
                   ),
                   SizedBox(width: 32),
                 ],

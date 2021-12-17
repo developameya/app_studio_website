@@ -1,11 +1,9 @@
-import 'package:app_studio_webstie/Pages/ContactPage.dart';
-
+import 'package:app_studio_webstie/Widgets/NavBarItem.dart';
 import 'package:app_studio_webstie/Widgets/ResponsiveWidget.dart';
 import 'package:app_studio_webstie/Constants/AppColors.dart';
 import 'package:flutter/material.dart';
-import 'package:app_studio_webstie/Widgets/NavButton.dart';
 
-import '../Constants/AppImages.dart';
+NavBarItem _navBarItem = NavBarItem();
 
 class DesktopNavBar extends StatefulWidget {
   final Size screenSize;
@@ -33,43 +31,9 @@ class _DesktopNavBarState extends State<DesktopNavBar> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
+            _navBarItem.NavLogo(height: widget.screenSize.width / 35),
             Row(
-              children: [
-                Image.asset(
-                  logoImage,
-                  height: widget.screenSize.width / 35,
-                ),
-                SizedBox(width: 30),
-                NavButton(
-                  title: 'features',
-                  onTap: () {},
-                ),
-                SizedBox(width: 30),
-                NavButton(
-                  title: 'screenshots',
-                  onTap: () {},
-                ),
-              ],
-            ),
-            Row(
-              children: [
-                NavButton(
-                  title: 'blog',
-                  onTap: () {},
-                ),
-                SizedBox(width: 30),
-                NavButton(
-                  title: 'contact',
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => ContactPage(),
-                      ),
-                    );
-                  },
-                ),
-              ],
+              children: _navBarItem.NavButtonList(context: context),
             ),
           ],
         ),

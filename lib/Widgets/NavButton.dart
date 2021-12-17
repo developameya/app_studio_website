@@ -7,8 +7,16 @@ class NavButton extends StatefulWidget {
   final void Function()? onTap;
   final String title;
   final double? fontSize;
-  NavButton({Key? key, required this.title, this.fontSize, this.onTap})
-      : super(key: key);
+  final double? verticaPadding;
+  final double? horizontalPadding;
+  NavButton({
+    Key? key,
+    required this.title,
+    this.fontSize,
+    this.onTap,
+    this.verticaPadding,
+    this.horizontalPadding,
+  }) : super(key: key);
 
   @override
   _NavButtonState createState() => _NavButtonState();
@@ -29,12 +37,18 @@ class _NavButtonState extends State<NavButton> {
 
   @override
   Widget build(BuildContext context) {
-    return TextButton(
-      style: ButtonStyle(
-        foregroundColor: MaterialStateProperty.resolveWith(getColor),
+    return Padding(
+      padding: EdgeInsets.symmetric(
+        vertical: widget.verticaPadding ?? 0.0,
+        horizontal: widget.horizontalPadding ?? 0.0,
       ),
-      onPressed: widget.onTap,
-      child: _textFormatter.navButtonText(text: widget.title),
+      child: TextButton(
+        style: ButtonStyle(
+          foregroundColor: MaterialStateProperty.resolveWith(getColor),
+        ),
+        onPressed: widget.onTap,
+        child: _textFormatter.navButtonText(text: widget.title),
+      ),
     );
   }
 }
