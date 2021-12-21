@@ -7,10 +7,9 @@ NavBarItem _navBarItem = NavBarItem();
 
 class DesktopNavBar extends StatefulWidget {
   final Size screenSize;
-  const DesktopNavBar({
-    Key? key,
-    required this.screenSize,
-  }) : super(key: key);
+  final void Function()? action;
+  const DesktopNavBar({Key? key, required this.screenSize, this.action})
+      : super(key: key);
 
   @override
   _DesktopNavBarState createState() => _DesktopNavBarState();
@@ -31,9 +30,13 @@ class _DesktopNavBarState extends State<DesktopNavBar> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            _navBarItem.NavLogo(height: widget.screenSize.width / 35),
+            _navBarItem.NavLogo(
+                height: widget.screenSize.width / 35, action: widget.action),
             Row(
-              children: _navBarItem.NavButtonList(context: context),
+              children: _navBarItem.NavButtonList(
+                context: context,
+                horizontalPadding: 8.0,
+              ),
             ),
           ],
         ),

@@ -9,6 +9,7 @@ class NavButton extends StatefulWidget {
   final double? fontSize;
   final double? verticaPadding;
   final double? horizontalPadding;
+
   NavButton({
     Key? key,
     required this.title,

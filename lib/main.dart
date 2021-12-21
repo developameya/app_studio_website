@@ -1,4 +1,6 @@
 import 'package:app_studio_webstie/Constants/AppImages.dart';
+import 'package:app_studio_webstie/Constants/NavigatonRoutes.dart';
+import 'package:app_studio_webstie/Pages/SupportPage.dart';
 import 'package:flutter/material.dart';
 import 'package:app_studio_webstie/Pages/HomePage/HomePage.dart';
 
@@ -19,10 +21,19 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Ameya App Studio',
+      // Start the app with the "/" named route.
+      initialRoute: routeHome,
+      routes: {
+        //when navigating to 'routeHome' build the HomePage
+        routeHome: (context) => const HomePage(),
+        //when navigating to 'supportPage' build the SupportPage
+        supportPage: (context) => SupportPage(),
+      },
       theme: ThemeData(
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: HomePage(),
+      //We don't need to define 'home' since we have defined the 'initialRoute' property.
+      // home: HomePage(),
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:app_studio_webstie/Constants/AppColors.dart';
+import 'package:app_studio_webstie/Constants/NavigatonRoutes.dart';
 import 'package:app_studio_webstie/NavBar/NavBar.dart';
 import 'package:app_studio_webstie/Widgets/Footer.dart';
 import 'package:app_studio_webstie/Widgets/ResponsiveWidget.dart';
@@ -23,6 +24,13 @@ class LegalPage extends StatelessWidget {
     return Scaffold(
       appBar: NavBar(
         screenSize: screenSize,
+        logoAction: () {
+          //Navigate to the homepage
+          Navigator.popUntil(
+            context,
+            ModalRoute.withName(routeHome),
+          );
+        },
       ),
       body: SingleChildScrollView(
         child: Container(

@@ -1,5 +1,5 @@
 import 'package:app_studio_webstie/Constants/AppImages.dart';
-import 'package:app_studio_webstie/Pages/ContactPage.dart';
+import 'package:app_studio_webstie/Constants/NavigatonRoutes.dart';
 import 'package:flutter/material.dart';
 import 'NavButton.dart';
 
@@ -33,21 +33,33 @@ class NavBarItem {
         verticaPadding: verticalPadding,
         horizontalPadding: horizontalPadding,
         onTap: () {
-          Navigator.push(
+          bool isNewRouteSameAsCurrentRoute = false;
+          Navigator.popUntil(
             context,
-            MaterialPageRoute(
-              builder: (context) => ContactPage(),
-            ),
+            (route) {
+              print(route.settings.name);
+              if (route.settings.name == supportPage) {
+                isNewRouteSameAsCurrentRoute = true;
+              }
+              return true;
+            },
           );
+
+          if (!isNewRouteSameAsCurrentRoute) {
+            Navigator.pushNamed(context, supportPage);
+          }
         },
       ),
     ];
   }
 
-  Image NavLogo({double? height}) {
-    return Image.asset(
-      logoImage,
-      height: height,
+  InkWell NavLogo({void Function()? action, double? height}) {
+    return InkWell(
+      onTap: action,
+      child: Image.asset(
+        logoImage,
+        height: height,
+      ),
     );
   }
 }

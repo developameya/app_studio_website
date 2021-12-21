@@ -19,7 +19,7 @@ class _MobileDrawerState extends State<MobileDrawer> {
   @override
   void initState() {
     super.initState();
-    _drawerSize = Size(50 * 4, 50 * 7);
+    _drawerSize = Size(50 * 4, 50 * 6);
   }
 
   @override
@@ -60,7 +60,7 @@ class _MobileDrawerState extends State<MobileDrawer> {
                   Column(
                     children: _navBarItem.NavButtonList(
                       context: context,
-                      verticalPadding: 25.0,
+                      verticalPadding: 20.0,
                     ),
                   ),
                   SizedBox(width: 32),
