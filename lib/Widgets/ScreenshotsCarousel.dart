@@ -29,10 +29,10 @@ class _ScreenShotCarouselState extends State<ScreenShotCarousel> {
     return CarouselSlider(
       items: imageSliders,
       options: CarouselOptions(
-        scrollPhysics: NeverScrollableScrollPhysics(),
+        scrollPhysics: PageScrollPhysics(),
         enlargeCenterPage: true,
         autoPlay: true,
-        aspectRatio: 8 / 18,
+        aspectRatio: 10 / 20,
       ),
       carouselController: _carouselController,
     );

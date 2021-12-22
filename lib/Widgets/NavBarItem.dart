@@ -37,14 +37,14 @@ class NavBarItem {
           Navigator.popUntil(
             context,
             (route) {
-              print(route.settings.name);
+              //check the name of the current route/page.
               if (route.settings.name == supportPage) {
                 isNewRouteSameAsCurrentRoute = true;
               }
               return true;
             },
           );
-
+          //if the current route/page is not the page we are trying to push with this method, then push the new page/route.
           if (!isNewRouteSameAsCurrentRoute) {
             Navigator.pushNamed(context, supportPage);
           }

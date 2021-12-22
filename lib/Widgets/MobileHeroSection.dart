@@ -20,7 +20,7 @@ class _MobileHeroSectionState extends State<MobileHeroSection> {
   @override
   void initState() {
     super.initState();
-    _containerHeight = widget.screenSize.width * 1.7;
+    _containerHeight = widget.screenSize.width * 1.3;
   }
 
   @override
@@ -52,7 +52,7 @@ class _MobileHeroSectionState extends State<MobileHeroSection> {
               ),
               Image.asset(
                 heroImage,
-                width: _containerHeight / 2,
+                height: _containerHeight * 1.1,
               ),
             ],
           ),

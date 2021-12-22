@@ -1,12 +1,13 @@
-const heroHeaderText = 'Curabitur dapibus arcu leo.';
+const heroHeaderText = 'Signary - A note taker';
 const heroHeaderBlurb =
-    'Sed velit lectus, porttitor eu convallis sit amet, semper eget mauris. Integer in pulvinar mauris. Donec facilisis placerat magna sed cursus.';
+    'Writing is the most intuitive and the most accessible technology a human has. Signary provides the most essential tools to write your thoughts on your iPhone.';
 const featuresHeaderText = 'Why should you use Signary?';
 const screenshotHeaderText = 'Check it out!';
 const appStoreHeaderText = 'Find Signary on the App Store';
 
 const contactBodyText = 'Hello, I’m Ameya! \n' +
     '\n' +
+    'I run Ameya’s App Studio and handle all the support myself. You can get in touch with me on the email below.\n' +
     'I run Ameya’s App Studio and handle all the support myself. You can get in touch with me on the email below.\n' +
     '\n' +
     'I’m devoted to resolve any issues with our apps. I would love to help if you have any concern.\n' +
