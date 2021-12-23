@@ -10,11 +10,13 @@ TextFormatter _textFormatter = TextFormatter();
 
 class ScreenshotSection extends StatelessWidget {
   final Size screenSize;
-  ScreenshotSection({required this.screenSize});
+  final GlobalKey dataKey;
+  ScreenshotSection({required this.screenSize, required this.dataKey});
 
   @override
   Widget build(BuildContext context) {
     return Stack(
+      key: dataKey,
       alignment: AlignmentDirectional.bottomStart,
       children: [
         Container(

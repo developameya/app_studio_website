@@ -7,7 +7,16 @@ import 'package:app_studio_webstie/Widgets/ResponsiveWidget.dart';
 
 class DesktopHomePage extends StatefulWidget {
   final Size screenSize;
-  const DesktopHomePage({Key? key, required this.screenSize}) : super(key: key);
+  final GlobalKey heroKey;
+  final GlobalKey featuresKey;
+  final GlobalKey screenshotKey;
+  const DesktopHomePage({
+    Key? key,
+    required this.screenSize,
+    required this.heroKey,
+    required this.featuresKey,
+    required this.screenshotKey,
+  }) : super(key: key);
 
   @override
   _DesktopHomePageState createState() => _DesktopHomePageState();
@@ -26,7 +35,10 @@ class _DesktopHomePageState extends State<DesktopHomePage> {
       controller: _scrollController,
       child: Column(
         children: [
-          HeroSection(screenSize: widget.screenSize),
+          HeroSection(
+            screenSize: widget.screenSize,
+            dataKey: widget.heroKey,
+          ),
           SizedBox(height: widget.screenSize.width / 8),
           Padding(
             padding: ResponsiveWidget.isMediumScreen(context)
@@ -34,10 +46,14 @@ class _DesktopHomePageState extends State<DesktopHomePage> {
                 : EdgeInsets.symmetric(horizontal: widget.screenSize.width / 8),
             child: FeaturesSection(
               screenSize: widget.screenSize,
+              dataKey: widget.featuresKey,
             ),
           ),
           SizedBox(height: widget.screenSize.width / 8),
-          ScreenshotSection(screenSize: widget.screenSize),
+          ScreenshotSection(
+            screenSize: widget.screenSize,
+            dataKey: widget.screenshotKey,
+          ),
           Footer(screenSize: widget.screenSize),
         ],
       ),

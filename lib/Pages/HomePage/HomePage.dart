@@ -13,16 +13,29 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final heroKey = new GlobalKey();
+  final featuresKey = new GlobalKey();
+  final screenshotKey = new GlobalKey();
   @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
-
     return Scaffold(
-      appBar: NavBar(screenSize: screenSize),
-      drawer: MobileDrawer(screenSize: screenSize),
-      body: ResponsiveWidget.isSmallScreen(context)
-          ? MobileHomePage(screenSize: screenSize)
-          : DesktopHomePage(screenSize: screenSize),
-    );
+        appBar: NavBar(
+          screenSize: screenSize,
+          heroKey: heroKey,
+          featuresKey: featuresKey,
+          screenshotKey: screenshotKey,
+        ),
+        drawer: MobileDrawer(screenSize: screenSize),
+        body: SingleChildScrollView(
+          child: ResponsiveWidget.isSmallScreen(context)
+              ? MobileHomePage(screenSize: screenSize)
+              : DesktopHomePage(
+                  screenSize: screenSize,
+                  heroKey: heroKey,
+                  featuresKey: featuresKey,
+                  screenshotKey: screenshotKey,
+                ),
+        ));
   }
 }

@@ -11,12 +11,14 @@ TextFormatter _textFormatter = TextFormatter();
 
 class FeaturesSection extends StatelessWidget {
   final Size screenSize;
+  final GlobalKey dataKey;
 
-  FeaturesSection({required this.screenSize});
+  FeaturesSection({required this.screenSize, required this.dataKey});
 
   @override
   Widget build(BuildContext context) {
     return Column(
+      key: dataKey,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         _textFormatter.sectionHeader(text: featuresHeaderText, lineWidth: 550),

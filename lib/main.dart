@@ -1,6 +1,8 @@
 import 'package:app_studio_webstie/Constants/AppImages.dart';
 import 'package:app_studio_webstie/Constants/NavigatonRoutes.dart';
+import 'package:app_studio_webstie/Pages/PrivacyPolicyPage.dart';
 import 'package:app_studio_webstie/Pages/SupportPage.dart';
+import 'package:app_studio_webstie/Pages/TermsOfUsePage.dart';
 import 'package:flutter/material.dart';
 import 'package:app_studio_webstie/Pages/HomePage/HomePage.dart';
 
@@ -28,6 +30,10 @@ class MyApp extends StatelessWidget {
         routeHome: (context) => const HomePage(),
         //when navigating to 'supportPage' build the SupportPage
         supportPage: (context) => SupportPage(),
+        //when navigating to 'termsOfUsePage' build the termsOfUsePage
+        termsOfUsePage: (context) => TermsOfUsePage(),
+        //when navigating to 'privacyPolicyPage' build the privacyPolicyPage
+        privacyPolicyPage: (context) => PrivacyPolicyPage(),
       },
       theme: ThemeData(
         visualDensity: VisualDensity.adaptivePlatformDensity,

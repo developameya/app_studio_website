@@ -8,19 +8,24 @@ class NavBarItem {
     required BuildContext context,
     double? verticalPadding,
     double? horizontalPadding,
+    GlobalKey? heroKey,
+    GlobalKey? featuresKey,
+    GlobalKey? screenshotKey,
   }) {
     return <Widget>[
       NavButton(
         title: 'features',
         verticaPadding: verticalPadding,
         horizontalPadding: horizontalPadding,
-        onTap: () {},
+        onTap: () =>
+            Scrollable.ensureVisible(featuresKey!.currentContext ?? context),
       ),
       NavButton(
         title: 'screenshots',
         verticaPadding: verticalPadding,
         horizontalPadding: horizontalPadding,
-        onTap: () {},
+        onTap: () =>
+            Scrollable.ensureVisible(screenshotKey!.currentContext ?? context),
       ),
       NavButton(
         title: 'blog',

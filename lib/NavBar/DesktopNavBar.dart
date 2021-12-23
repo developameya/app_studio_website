@@ -7,9 +7,18 @@ NavBarItem _navBarItem = NavBarItem();
 
 class DesktopNavBar extends StatefulWidget {
   final Size screenSize;
+  final GlobalKey? heroKey;
+  final GlobalKey? featuresKey;
+  final GlobalKey? screenshotKey;
   final void Function()? action;
-  const DesktopNavBar({Key? key, required this.screenSize, this.action})
-      : super(key: key);
+  const DesktopNavBar({
+    Key? key,
+    required this.screenSize,
+    this.action,
+    this.heroKey,
+    this.featuresKey,
+    this.screenshotKey,
+  }) : super(key: key);
 
   @override
   _DesktopNavBarState createState() => _DesktopNavBarState();
@@ -36,6 +45,9 @@ class _DesktopNavBarState extends State<DesktopNavBar> {
               children: _navBarItem.NavButtonList(
                 context: context,
                 horizontalPadding: 8.0,
+                heroKey: widget.heroKey,
+                featuresKey: widget.featuresKey,
+                screenshotKey: widget.screenshotKey,
               ),
             ),
           ],

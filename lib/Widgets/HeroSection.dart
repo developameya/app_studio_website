@@ -10,15 +10,17 @@ TextFormatter _textFormatter = TextFormatter();
 
 class HeroSection extends StatelessWidget {
   final Size screenSize;
+  final GlobalKey dataKey;
   late Size _maxContainerDimensions =
       Size(screenSize.width, screenSize.width / 2.2);
   late Size _mediumContainerDimensions =
       Size(screenSize.width, screenSize.width / 1.2);
 
-  HeroSection({required this.screenSize});
+  HeroSection({required this.screenSize, required this.dataKey});
   @override
   Widget build(BuildContext context) {
     return Stack(
+      key: dataKey,
       children: [
         Container(
           height: ResponsiveWidget.isMediumScreen(context)

@@ -1,8 +1,7 @@
 import 'package:app_studio_webstie/Constants/AppColors.dart';
 import 'package:app_studio_webstie/Constants/AppText.dart';
+import 'package:app_studio_webstie/Constants/NavigatonRoutes.dart';
 import 'package:app_studio_webstie/NavBar/NavBar.dart';
-import 'package:app_studio_webstie/Pages/PrivacyPolicyPage.dart';
-import 'package:app_studio_webstie/Pages/TermsOfUsePage.dart';
 import 'package:app_studio_webstie/Widgets/Footer.dart';
 import 'package:app_studio_webstie/Widgets/ResponsiveWidget.dart';
 import 'package:app_studio_webstie/Widgets/TextFormatter.dart';
@@ -19,9 +18,10 @@ class SupportPage extends StatelessWidget {
     return Scaffold(
       appBar: NavBar(
         screenSize: screenSize,
-        logoAction: () {
-          Navigator.pop(context);
-        },
+        logoAction: () => Navigator.popUntil(
+          context,
+          ModalRoute.withName(routeHome),
+        ),
       ),
       body: Container(
         width: screenSize.width,
@@ -68,12 +68,7 @@ class SupportPage extends StatelessWidget {
                   TextButton(
                     style: ButtonStyle(),
                     onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => TermsOfUsePage(),
-                        ),
-                      );
+                      Navigator.pushNamed(context, termsOfUsePage);
                     },
                     child: _textFormatter.navButtonText(
                       text: 'Terms Of Use',
@@ -85,12 +80,7 @@ class SupportPage extends StatelessWidget {
                   TextButton(
                     style: ButtonStyle(),
                     onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => PrivacyPolicyPage(),
-                        ),
-                      );
+                      Navigator.pushNamed(context, privacyPolicyPage);
                     },
                     child: _textFormatter.navButtonText(
                       text: 'privacy policy',

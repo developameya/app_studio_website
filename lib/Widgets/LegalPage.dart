@@ -12,7 +12,10 @@ class LegalPage extends StatelessWidget {
   final Size screenSize;
   final String header;
   final String body;
-  const LegalPage({
+  final heroKey = new GlobalKey();
+  final featuresKey = new GlobalKey();
+  final screenshotKey = new GlobalKey();
+  LegalPage({
     Key? key,
     required this.screenSize,
     required this.header,
@@ -24,13 +27,13 @@ class LegalPage extends StatelessWidget {
     return Scaffold(
       appBar: NavBar(
         screenSize: screenSize,
-        logoAction: () {
-          //Navigate to the homepage
-          Navigator.popUntil(
-            context,
-            ModalRoute.withName(routeHome),
-          );
-        },
+        heroKey: heroKey,
+        featuresKey: featuresKey,
+        screenshotKey: screenshotKey,
+        logoAction: () => Navigator.popUntil(
+          context,
+          ModalRoute.withName(routeHome),
+        ),
       ),
       body: SingleChildScrollView(
         child: Container(
