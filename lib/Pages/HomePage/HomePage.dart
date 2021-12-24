@@ -1,5 +1,5 @@
-import 'package:app_studio_webstie/NavBar/MobileDrawer.dart';
-import 'package:app_studio_webstie/NavBar/Home/HomeNavBar.dart';
+import 'package:app_studio_webstie/Navigation/MobileDrawer.dart';
+import 'package:app_studio_webstie/Navigation/Home/HomeNavBar.dart';
 import 'package:app_studio_webstie/Pages/HomePage/DesktopHomePage.dart';
 import 'package:app_studio_webstie/Pages/HomePage/MobileHomePage.dart';
 import 'package:app_studio_webstie/Widgets/ResponsiveWidget.dart';

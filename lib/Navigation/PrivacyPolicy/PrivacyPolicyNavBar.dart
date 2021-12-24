@@ -1,4 +1,4 @@
-import 'package:app_studio_webstie/NavBar/PrivacyPolicy/DesktopPrivacyPolicyNavBar.dart';
+import 'package:app_studio_webstie/Navigation/PrivacyPolicy/DesktopPrivacyPolicyNavBar.dart';
 import 'package:app_studio_webstie/Widgets/NavBar.dart';
 import 'package:flutter/material.dart';
 

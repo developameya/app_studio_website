@@ -1,6 +1,6 @@
 import 'package:app_studio_webstie/Constants/AppColors.dart';
 import 'package:app_studio_webstie/Constants/AppText.dart';
-import 'package:app_studio_webstie/NavBar/Support/SupportNavBar.dart';
+import 'package:app_studio_webstie/Navigation/Support/SupportNavBar.dart';
 import 'package:app_studio_webstie/Widgets/Footer.dart';
 import 'package:app_studio_webstie/Widgets/ResponsiveWidget.dart';
 import 'package:app_studio_webstie/Widgets/TextFormatter.dart';
