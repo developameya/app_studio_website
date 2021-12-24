@@ -10,7 +10,9 @@ class TermsOfUseNavDrawer extends NavDrawer {
   TermsOfUseNavDrawer({
     required this.context,
   }) : super(
-          navButtonList:
-              _navBarItem.termsOfUseNavBarButtonList(context: context),
+          navButtonList: _navBarItem.termsOfUseNavBarButtonList(
+            context: context,
+            verticalPadding: 20,
+          ),
         );
 }

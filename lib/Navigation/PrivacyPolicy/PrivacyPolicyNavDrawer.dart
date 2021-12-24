@@ -8,7 +8,9 @@ class PrivacyPolicyNavDrawer extends NavDrawer {
   final BuildContext context;
   PrivacyPolicyNavDrawer({required this.context})
       : super(
-          navButtonList:
-              _navBarItem.privacyPolicyNavBarButtonList(context: context),
+          navButtonList: _navBarItem.privacyPolicyNavBarButtonList(
+            context: context,
+            verticalPadding: 20,
+          ),
         );
 }

@@ -10,6 +10,7 @@ class SupportNavDrawer extends NavDrawer {
       : super(
           navButtonList: _navBarItem.supportNavButtonList(
             context: context,
+            verticalPadding: 20,
           ),
         );
 }

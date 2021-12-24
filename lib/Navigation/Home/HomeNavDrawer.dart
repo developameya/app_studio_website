@@ -21,6 +21,7 @@ class HomeNavDrawer extends NavDrawer {
             featuresKey: featuresKey,
             screenshotKey: screenshotKey,
             downloadKey: downloadKey,
+            verticalPadding: 20,
           ),
         );
 }

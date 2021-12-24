@@ -19,7 +19,7 @@ class _NavDrawerState extends State<NavDrawer> {
   @override
   void initState() {
     super.initState();
-    _drawerSize = Size(50 * 4, 50 * 6);
+    _drawerSize = Size(50 * 5, 50 * 6);
   }
 
   @override
