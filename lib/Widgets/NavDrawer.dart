@@ -1,19 +1,19 @@
 import 'package:app_studio_webstie/Constants/AppColors.dart';
-import 'package:app_studio_webstie/Widgets/NavBarItem.dart';
 import 'package:flutter/material.dart';
 
-NavBarItem _navBarItem = NavBarItem();
+class NavDrawer extends StatefulWidget {
+  final List<Widget> navButtonList;
 
-class MobileDrawer extends StatefulWidget {
-  final Size screenSize;
-
-  const MobileDrawer({Key? key, required this.screenSize}) : super(key: key);
+  const NavDrawer({
+    Key? key,
+    required this.navButtonList,
+  }) : super(key: key);
 
   @override
-  _MobileDrawerState createState() => _MobileDrawerState();
+  _NavDrawerState createState() => _NavDrawerState();
 }
 
-class _MobileDrawerState extends State<MobileDrawer> {
+class _NavDrawerState extends State<NavDrawer> {
   bool _isHovering = false;
   late Size _drawerSize;
   @override
@@ -24,6 +24,7 @@ class _MobileDrawerState extends State<MobileDrawer> {
 
   @override
   Widget build(BuildContext context) {
+    Size screenSize = MediaQuery.of(context).size;
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -58,10 +59,7 @@ class _MobileDrawerState extends State<MobileDrawer> {
                     ),
                   ),
                   Column(
-                    children: _navBarItem.supportNavButtonList(
-                      context: context,
-                      verticalPadding: 20.0,
-                    ),
+                    children: widget.navButtonList,
                   ),
                   SizedBox(width: 32),
                 ],

@@ -1,4 +1,4 @@
-import 'package:app_studio_webstie/Navigation/MobileDrawer.dart';
+import 'package:app_studio_webstie/Navigation/Home/HomeNavDrawer.dart';
 import 'package:app_studio_webstie/Navigation/Home/HomeNavBar.dart';
 import 'package:app_studio_webstie/Pages/HomePage/DesktopHomePage.dart';
 import 'package:app_studio_webstie/Pages/HomePage/MobileHomePage.dart';
@@ -22,13 +22,16 @@ class _HomePageState extends State<HomePage> {
     var screenSize = MediaQuery.of(context).size;
     return Scaffold(
         appBar: HomeNavBar(
-          screenSize: screenSize,
           featuresKey: featuresKey,
           screenshotKey: screenshotKey,
           downloadKey: downloadKey,
           context: context,
         ),
-        drawer: MobileDrawer(screenSize: screenSize),
+        drawer: HomeNavDrawer(
+            context: context,
+            featuresKey: featuresKey,
+            screenshotKey: screenshotKey,
+            downloadKey: downloadKey),
         body: SingleChildScrollView(
           child: ResponsiveWidget.isSmallScreen(context)
               ? MobileHomePage(screenSize: screenSize)

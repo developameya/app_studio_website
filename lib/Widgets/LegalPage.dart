@@ -3,8 +3,8 @@ import 'package:app_studio_webstie/Widgets/Footer.dart';
 import 'package:app_studio_webstie/Widgets/ResponsiveWidget.dart';
 import 'package:app_studio_webstie/Widgets/TextFormatter.dart';
 import 'package:flutter/material.dart';
-
 import 'NavBar.dart';
+import 'NavDrawer.dart';
 
 TextFormatter _textFormatter = TextFormatter();
 
@@ -13,6 +13,7 @@ class LegalPage extends StatelessWidget {
   final String header;
   final String body;
   final NavBar navBar;
+  final NavDrawer navDrawer;
 
   LegalPage({
     Key? key,
@@ -20,12 +21,14 @@ class LegalPage extends StatelessWidget {
     required this.header,
     required this.body,
     required this.navBar,
+    required this.navDrawer,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: navBar,
+      drawer: navDrawer,
       body: SingleChildScrollView(
         child: Container(
           width: screenSize.width,

@@ -1,5 +1,6 @@
 import 'package:app_studio_webstie/Constants/AppText.dart';
 import 'package:app_studio_webstie/Navigation/PrivacyPolicy/PrivacyPolicyNavBar.dart';
+import 'package:app_studio_webstie/Navigation/PrivacyPolicy/PrivacyPolicyNavDrawer.dart';
 import 'package:flutter/material.dart';
 import 'package:app_studio_webstie/Widgets/LegalPage.dart';
 
@@ -14,7 +15,9 @@ class PrivacyPolicyPage extends StatelessWidget {
       header: privacyPolicyHeaderText,
       body: privacyPolicyBodyText,
       navBar: PrivacyPolicyNavBar(
-        screenSize: screenSize,
+        context: context,
+      ),
+      navDrawer: PrivacyPolicyNavDrawer(
         context: context,
       ),
     );

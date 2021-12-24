@@ -1,16 +1,14 @@
-import 'package:app_studio_webstie/Navigation/PrivacyPolicy/DesktopPrivacyPolicyNavBar.dart';
 import 'package:app_studio_webstie/Widgets/NavBar.dart';
+import 'package:app_studio_webstie/Widgets/NavBarItem.dart';
 import 'package:flutter/material.dart';
+
+NavBarItem _navBarItem = NavBarItem();
 
 class PrivacyPolicyNavBar extends NavBar {
   final BuildContext context;
-  final Size screenSize;
-  PrivacyPolicyNavBar({required this.screenSize, required this.context})
+  PrivacyPolicyNavBar({required this.context})
       : super(
-          screenSize: screenSize,
-          desktopNavBar: DesktopPrivacyPolicyNavBar(
-            context: context,
-            screenSize: screenSize,
-          ),
+          navButtonList:
+              _navBarItem.privacyPolicyNavBarButtonList(context: context),
         );
 }

@@ -1,5 +1,6 @@
 import 'package:app_studio_webstie/Constants/AppText.dart';
 import 'package:app_studio_webstie/Navigation/TermsOfUse/TermsOfUseNavBar.dart';
+import 'package:app_studio_webstie/Navigation/TermsOfUse/TermsOfUseNavDrawer.dart';
 import 'package:flutter/material.dart';
 import 'package:app_studio_webstie/Widgets/LegalPage.dart';
 
@@ -14,7 +15,9 @@ class TermsOfUsePage extends StatelessWidget {
       header: termsOfUseHeaderText,
       body: termsOfUseBodyText,
       navBar: TermsOfUseNavBar(
-        screenSize: screenSize,
+        context: context,
+      ),
+      navDrawer: TermsOfUseNavDrawer(
         context: context,
       ),
     );

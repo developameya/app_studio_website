@@ -1,6 +1,7 @@
 import 'package:app_studio_webstie/Constants/AppColors.dart';
 import 'package:app_studio_webstie/Constants/AppText.dart';
 import 'package:app_studio_webstie/Navigation/Support/SupportNavBar.dart';
+import 'package:app_studio_webstie/Navigation/Support/SupportNavDrawer.dart';
 import 'package:app_studio_webstie/Widgets/Footer.dart';
 import 'package:app_studio_webstie/Widgets/ResponsiveWidget.dart';
 import 'package:app_studio_webstie/Widgets/TextFormatter.dart';
@@ -16,7 +17,9 @@ class SupportPage extends StatelessWidget {
     var screenSize = MediaQuery.of(context).size;
     return Scaffold(
       appBar: SupportNavBar(
-        screenSize: screenSize,
+        context: context,
+      ),
+      drawer: SupportNavDrawer(
         context: context,
       ),
       body: Container(
