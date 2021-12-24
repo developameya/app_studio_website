@@ -58,7 +58,7 @@ class _MobileDrawerState extends State<MobileDrawer> {
                     ),
                   ),
                   Column(
-                    children: _navBarItem.NavButtonList(
+                    children: _navBarItem.supportNavButtonList(
                       context: context,
                       verticalPadding: 20.0,
                     ),

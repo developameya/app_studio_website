@@ -10,13 +10,18 @@ TextFormatter _textFormatter = TextFormatter();
 
 class ScreenshotSection extends StatelessWidget {
   final Size screenSize;
-  final GlobalKey dataKey;
-  ScreenshotSection({required this.screenSize, required this.dataKey});
+  final GlobalKey screenshotsRowKey;
+  final GlobalKey downloadKey;
+  ScreenshotSection({
+    required this.screenSize,
+    required this.screenshotsRowKey,
+    required this.downloadKey,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Stack(
-      key: dataKey,
+      key: screenshotsRowKey,
       alignment: AlignmentDirectional.bottomStart,
       children: [
         Container(
@@ -60,19 +65,24 @@ class ScreenshotSection extends StatelessWidget {
                   ],
                 ),
                 SizedBox(height: 100),
-                _textFormatter.sectionHeader(
-                  text: appStoreHeaderText,
-                  lineWidth: 600,
-                  lineColor: secondaryColor,
-                  textColor: Colors.white,
-                ),
-                SizedBox(height: 50),
-                InkWell(
-                  onTap: () {},
-                  child: Image.asset(
-                    'assets/images/Icon App Store@2x.png',
-                    width: 150,
-                  ),
+                Column(
+                  key: downloadKey,
+                  children: [
+                    _textFormatter.sectionHeader(
+                      text: appStoreHeaderText,
+                      lineWidth: 600,
+                      lineColor: secondaryColor,
+                      textColor: Colors.white,
+                    ),
+                    SizedBox(height: 50),
+                    InkWell(
+                      onTap: () {},
+                      child: Image.asset(
+                        'assets/images/Icon App Store@2x.png',
+                        width: 150,
+                      ),
+                    ),
+                  ],
                 ),
                 SizedBox(height: 40),
               ],

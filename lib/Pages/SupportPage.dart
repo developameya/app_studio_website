@@ -1,7 +1,6 @@
 import 'package:app_studio_webstie/Constants/AppColors.dart';
 import 'package:app_studio_webstie/Constants/AppText.dart';
-import 'package:app_studio_webstie/Constants/NavigatonRoutes.dart';
-import 'package:app_studio_webstie/NavBar/NavBar.dart';
+import 'package:app_studio_webstie/NavBar/Support/SupportNavBar.dart';
 import 'package:app_studio_webstie/Widgets/Footer.dart';
 import 'package:app_studio_webstie/Widgets/ResponsiveWidget.dart';
 import 'package:app_studio_webstie/Widgets/TextFormatter.dart';
@@ -16,12 +15,9 @@ class SupportPage extends StatelessWidget {
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: NavBar(
+      appBar: SupportNavBar(
         screenSize: screenSize,
-        logoAction: () => Navigator.popUntil(
-          context,
-          ModalRoute.withName(routeHome),
-        ),
+        context: context,
       ),
       body: Container(
         width: screenSize.width,
@@ -50,46 +46,6 @@ class SupportPage extends StatelessWidget {
                 text: contactBodyText,
                 textColor: Colors.white,
               ),
-              SizedBox(
-                height: screenSize.width / 30,
-              ),
-              _textFormatter.sectionHeader(
-                text: 'Legal',
-                textColor: Colors.white,
-                lineWidth: 200,
-                lineColor: secondaryColor,
-              ),
-              SizedBox(
-                height: screenSize.width / 30,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  TextButton(
-                    style: ButtonStyle(),
-                    onPressed: () {
-                      Navigator.pushNamed(context, termsOfUsePage);
-                    },
-                    child: _textFormatter.navButtonText(
-                      text: 'Terms Of Use',
-                      color: Colors.white,
-                      fontSize: 24,
-                    ),
-                  ),
-                  SizedBox(width: 30),
-                  TextButton(
-                    style: ButtonStyle(),
-                    onPressed: () {
-                      Navigator.pushNamed(context, privacyPolicyPage);
-                    },
-                    child: _textFormatter.navButtonText(
-                      text: 'privacy policy',
-                      color: Colors.white,
-                      fontSize: 24,
-                    ),
-                  ),
-                ],
-              )
             ],
           ),
         ),

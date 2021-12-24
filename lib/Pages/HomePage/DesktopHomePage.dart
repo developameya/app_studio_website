@@ -10,12 +10,14 @@ class DesktopHomePage extends StatefulWidget {
   final GlobalKey heroKey;
   final GlobalKey featuresKey;
   final GlobalKey screenshotKey;
+  final GlobalKey downloadKey;
   const DesktopHomePage({
     Key? key,
     required this.screenSize,
     required this.heroKey,
     required this.featuresKey,
     required this.screenshotKey,
+    required this.downloadKey,
   }) : super(key: key);
 
   @override
@@ -52,7 +54,8 @@ class _DesktopHomePageState extends State<DesktopHomePage> {
           SizedBox(height: widget.screenSize.width / 8),
           ScreenshotSection(
             screenSize: widget.screenSize,
-            dataKey: widget.screenshotKey,
+            screenshotsRowKey: widget.screenshotKey,
+            downloadKey: widget.downloadKey,
           ),
           Footer(screenSize: widget.screenSize),
         ],

@@ -1,10 +1,10 @@
 import 'package:app_studio_webstie/Constants/AppColors.dart';
-import 'package:app_studio_webstie/Constants/NavigatonRoutes.dart';
-import 'package:app_studio_webstie/NavBar/NavBar.dart';
 import 'package:app_studio_webstie/Widgets/Footer.dart';
 import 'package:app_studio_webstie/Widgets/ResponsiveWidget.dart';
 import 'package:app_studio_webstie/Widgets/TextFormatter.dart';
 import 'package:flutter/material.dart';
+
+import 'NavBar.dart';
 
 TextFormatter _textFormatter = TextFormatter();
 
@@ -12,29 +12,20 @@ class LegalPage extends StatelessWidget {
   final Size screenSize;
   final String header;
   final String body;
-  final heroKey = new GlobalKey();
-  final featuresKey = new GlobalKey();
-  final screenshotKey = new GlobalKey();
+  final NavBar navBar;
+
   LegalPage({
     Key? key,
     required this.screenSize,
     required this.header,
     required this.body,
+    required this.navBar,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: NavBar(
-        screenSize: screenSize,
-        heroKey: heroKey,
-        featuresKey: featuresKey,
-        screenshotKey: screenshotKey,
-        logoAction: () => Navigator.popUntil(
-          context,
-          ModalRoute.withName(routeHome),
-        ),
-      ),
+      appBar: navBar,
       body: SingleChildScrollView(
         child: Container(
           width: screenSize.width,

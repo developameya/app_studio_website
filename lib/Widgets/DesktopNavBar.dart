@@ -5,19 +5,14 @@ import 'package:flutter/material.dart';
 
 NavBarItem _navBarItem = NavBarItem();
 
-class DesktopNavBar extends StatefulWidget {
+class DesktopNavBar extends StatefulWidget implements PreferredSizeWidget {
   final Size screenSize;
-  final GlobalKey? heroKey;
-  final GlobalKey? featuresKey;
-  final GlobalKey? screenshotKey;
-  final void Function()? action;
+  final List<Widget> navButtonList;
+  Size get preferredSize => const Size.fromHeight(50);
   const DesktopNavBar({
     Key? key,
     required this.screenSize,
-    this.action,
-    this.heroKey,
-    this.featuresKey,
-    this.screenshotKey,
+    required this.navButtonList,
   }) : super(key: key);
 
   @override
@@ -40,15 +35,11 @@ class _DesktopNavBarState extends State<DesktopNavBar> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             _navBarItem.NavLogo(
-                height: widget.screenSize.width / 35, action: widget.action),
-            Row(
-              children: _navBarItem.NavButtonList(
+                height: widget.screenSize.width / 35,
                 context: context,
-                horizontalPadding: 8.0,
-                heroKey: widget.heroKey,
-                featuresKey: widget.featuresKey,
-                screenshotKey: widget.screenshotKey,
-              ),
+                heroKey: null),
+            Row(
+              children: widget.navButtonList,
             ),
           ],
         ),
