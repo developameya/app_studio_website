@@ -1,4 +1,4 @@
-import 'package:app_studio_webstie/NavBar/TermsOfUse/DesktopTermsOfUseNavBar.dart';
+import 'package:app_studio_webstie/Navigation/TermsOfUse/DesktopTermsOfUseNavBar.dart';
 import 'package:app_studio_webstie/Widgets/NavBar.dart';
 import 'package:flutter/material.dart';
 
