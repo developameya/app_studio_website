@@ -1,5 +1,10 @@
+import 'package:app_studio_webstie/Constants/AppImages.dart';
+import 'package:app_studio_webstie/Constants/NavigatonRoutes.dart';
+import 'package:app_studio_webstie/Pages/PrivacyPolicyPage.dart';
+import 'package:app_studio_webstie/Pages/SupportPage.dart';
+import 'package:app_studio_webstie/Pages/TermsOfUsePage.dart';
 import 'package:flutter/material.dart';
-import 'package:app_studio_webstie/NavBar/NavBar.dart';
+import 'package:app_studio_webstie/Pages/HomePage/HomePage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -7,36 +12,34 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
-
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    precacheImage(AssetImage(heroImage), context);
+    precacheImage(AssetImage(screenshots[0]), context);
+    precacheImage(AssetImage(screenshots[1]), context);
+    precacheImage(AssetImage(screenshots[2]), context);
+    precacheImage(AssetImage(screenshots[3]), context);
     return MaterialApp(
-      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      title: 'Ameya App Studio',
+      // Start the app with the "/" named route.
+      initialRoute: routeHome,
+      routes: {
+        //when navigating to 'routeHome' build the HomePage
+        routeHome: (context) => const HomePage(),
+        //when navigating to 'supportPage' build the SupportPage
+        supportPage: (context) => SupportPage(),
+        //when navigating to 'termsOfUsePage' build the termsOfUsePage
+        termsOfUsePage: (context) => TermsOfUsePage(),
+        //when navigating to 'privacyPolicyPage' build the privacyPolicyPage
+        privacyPolicyPage: (context) => PrivacyPolicyPage(),
+      },
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-        fontFamily: 'Raleway',
+        visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: HomePage(),
-    );
-  }
-}
-
-class HomePage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-          gradient: RadialGradient(
-              center: Alignment.bottomLeft,
-              radius: 5.0,
-              colors: [
-            Color.fromRGBO(60, 55, 92, 1),
-            Color.fromRGBO(30, 27, 46, 1),
-          ])),
-      child: Column(
-        children: <Widget>[NavBar()],
-      ),
+      //We don't need to define 'home' since we have defined the 'initialRoute' property.
+      // home: HomePage(),
     );
   }
 }

@@ -31,9 +31,6 @@ dependencies:
     sdk: flutter
 
 
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^1.0.2
 
 dev_dependencies:
   flutter_test:
@@ -55,10 +52,36 @@ flutter:
   assets:
     - assets/images/Icon_App_Studio@2x.png
     - assets/images/Icon_App_Studio-1@2x.jpg
+    - assets/images/iPhone hero image.png
+    - assets/images/Icon App Store@2x.png
+    - assets/images/circle_and_dots.png
+    - assets/images/pencil.png
+    - assets/images/square_and_pencil.png
+    - assets/images/Trash.png
+    - assets/images/1-app store screenshot@2x.png
+    - assets/images/2-app store screenshot@2x.png
+    - assets/images/3-app store screenshot@2x.png
+    - assets/images/4-app store screenshot@2x.png
+
   fonts:
     - family: Raleway
       fonts:
         - asset: assets/fonts/Raleway-Regular.ttf
+    - family: Montserrat
+      fonts:
+        - asset: assets/fonts/Montserrat-Light.ttf
+          weight: 200
+        - asset: assets/fonts/Montserrat-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Montserrat-MediumItalic.ttf
+          weight: 500
+          style: italic
+        - asset: assets/fonts/Montserrat-Thin.ttf
+          weight: 100
+        - asset: assets/fonts/Montserrat-ThinItalic.ttf
+          weight: 100
+          style: italic
+
 #     - family: Trajan Pro
 #       fonts:
 #         - asset: fonts/TrajanPro.ttf
