@@ -6,16 +6,19 @@ NavBarItem _navBarItem = NavBarItem();
 
 class HomeNavDrawer extends NavDrawer {
   final BuildContext context;
+  final Size screenSize;
   final GlobalKey featuresKey;
   final GlobalKey screenshotKey;
   final GlobalKey downloadKey;
 
   HomeNavDrawer({
     required this.context,
+    required this.screenSize,
     required GlobalKey this.featuresKey,
     required GlobalKey this.screenshotKey,
     required GlobalKey this.downloadKey,
   }) : super(
+          screenSize: screenSize,
           navButtonList: _navBarItem.HomeNavButtonList(
             context: context,
             featuresKey: featuresKey,

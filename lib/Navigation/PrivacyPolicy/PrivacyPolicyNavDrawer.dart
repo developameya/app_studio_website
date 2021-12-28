@@ -6,8 +6,11 @@ NavBarItem _navBarItem = NavBarItem();
 
 class PrivacyPolicyNavDrawer extends NavDrawer {
   final BuildContext context;
-  PrivacyPolicyNavDrawer({required this.context})
+  final Size screenSize;
+
+  PrivacyPolicyNavDrawer({required this.context, required this.screenSize})
       : super(
+          screenSize: screenSize,
           navButtonList: _navBarItem.privacyPolicyNavBarButtonList(
             context: context,
             verticalPadding: 20,

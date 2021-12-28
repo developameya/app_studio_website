@@ -18,6 +18,7 @@ class TermsOfUsePage extends StatelessWidget {
         context: context,
       ),
       navDrawer: TermsOfUseNavDrawer(
+        screenSize: screenSize,
         context: context,
       ),
     );

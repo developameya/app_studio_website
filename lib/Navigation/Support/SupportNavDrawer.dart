@@ -5,9 +5,13 @@ import 'package:flutter/material.dart';
 NavBarItem _navBarItem = NavBarItem();
 
 class SupportNavDrawer extends NavDrawer {
+  final Size screenSize;
   final BuildContext context;
-  SupportNavDrawer({required this.context})
-      : super(
+  SupportNavDrawer({
+    required this.context,
+    required this.screenSize,
+  }) : super(
+          screenSize: screenSize,
           navButtonList: _navBarItem.supportNavButtonList(
             context: context,
             verticalPadding: 20,

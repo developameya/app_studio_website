@@ -18,6 +18,7 @@ class PrivacyPolicyPage extends StatelessWidget {
         context: context,
       ),
       navDrawer: PrivacyPolicyNavDrawer(
+        screenSize: screenSize,
         context: context,
       ),
     );

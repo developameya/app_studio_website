@@ -20,6 +20,7 @@ class SupportPage extends StatelessWidget {
         context: context,
       ),
       drawer: SupportNavDrawer(
+        screenSize: screenSize,
         context: context,
       ),
       body: Container(

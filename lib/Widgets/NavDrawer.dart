@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 
 class NavDrawer extends StatefulWidget {
   final List<Widget> navButtonList;
+  final Size screenSize;
 
   const NavDrawer({
     Key? key,
     required this.navButtonList,
+    required this.screenSize,
   }) : super(key: key);
 
   @override
@@ -19,7 +21,11 @@ class _NavDrawerState extends State<NavDrawer> {
   @override
   void initState() {
     super.initState();
-    _drawerSize = Size(50 * 5, 50 * 6);
+    // _drawerSize = Size(50 * 5, 50 * 6);
+    _drawerSize = Size(
+      widget.screenSize.width / 2,
+      widget.screenSize.height / 2,
+    );
   }
 
   @override

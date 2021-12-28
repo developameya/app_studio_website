@@ -6,10 +6,13 @@ NavBarItem _navBarItem = NavBarItem();
 
 class TermsOfUseNavDrawer extends NavDrawer {
   final BuildContext context;
+  final Size screenSize;
 
   TermsOfUseNavDrawer({
+    required this.screenSize,
     required this.context,
   }) : super(
+          screenSize: screenSize,
           navButtonList: _navBarItem.termsOfUseNavBarButtonList(
             context: context,
             verticalPadding: 20,

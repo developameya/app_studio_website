@@ -28,6 +28,7 @@ class _HomePageState extends State<HomePage> {
           context: context,
         ),
         drawer: HomeNavDrawer(
+            screenSize: screenSize,
             context: context,
             featuresKey: featuresKey,
             screenshotKey: screenshotKey,
