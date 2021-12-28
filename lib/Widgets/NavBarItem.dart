@@ -18,6 +18,7 @@ class NavBarItem {
           verticaPadding: verticalPadding,
           horizontalPadding: horizontalPadding,
           onTap: () {
+            Navigator.pop(context);
             if (ModalRoute.of(context)!.settings.name != routeHome) {
               Navigator.popUntil(context, ModalRoute.withName(routeHome));
             } else {
@@ -30,6 +31,7 @@ class NavBarItem {
         verticaPadding: verticalPadding,
         horizontalPadding: horizontalPadding,
         onTap: () {
+          Navigator.pop(context);
           if (ModalRoute.of(context)!.settings.name != routeHome) {
             Navigator.popUntil(context, ModalRoute.withName(routeHome));
           } else {
@@ -43,6 +45,7 @@ class NavBarItem {
         verticaPadding: verticalPadding,
         horizontalPadding: horizontalPadding,
         onTap: () {
+          Navigator.pop(context);
           if (ModalRoute.of(context)!.settings.name != routeHome) {
             Navigator.popUntil(context, ModalRoute.withName(routeHome));
           } else {
@@ -56,6 +59,7 @@ class NavBarItem {
         verticaPadding: verticalPadding,
         horizontalPadding: horizontalPadding,
         onTap: () {
+          Navigator.pop(context);
           bool isNewRouteSameAsCurrentRoute = false;
           Navigator.popUntil(
             context,

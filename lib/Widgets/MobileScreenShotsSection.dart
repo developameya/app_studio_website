@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:app_studio_webstie/Constants/AppColors.dart';
 import 'package:app_studio_webstie/Constants/AppText.dart';
 import 'package:app_studio_webstie/Constants/AppImages.dart';
@@ -8,8 +10,14 @@ TextFormatter _textFormatter = TextFormatter();
 
 class MobileScreenShotsSection extends StatefulWidget {
   final Size screenSize;
-  const MobileScreenShotsSection({Key? key, required this.screenSize})
-      : super(key: key);
+  final GlobalKey screenshotKey;
+  final GlobalKey downloadKey;
+  const MobileScreenShotsSection({
+    Key? key,
+    required this.screenSize,
+    required this.screenshotKey,
+    required this.downloadKey,
+  }) : super(key: key);
 
   @override
   _MobileScreenShotsSectionState createState() =>
@@ -27,6 +35,7 @@ class _MobileScreenShotsSectionState extends State<MobileScreenShotsSection> {
           decoration: BoxDecoration(gradient: radialGradient),
         ),
         Column(
+          key: widget.screenshotKey,
           children: [
             _textFormatter.sectionHeader(
               text: screenshotHeaderText,
@@ -46,7 +55,9 @@ class _MobileScreenShotsSectionState extends State<MobileScreenShotsSection> {
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 50),
               child: InkWell(
-                onTap: () {},
+                key: widget.downloadKey,
+                onTap: () =>
+                    Link('https://apps.apple.com/ee/app/signary/id1575198986'),
                 child: Image.asset(
                   appStoreIconImage,
                   width: 120,

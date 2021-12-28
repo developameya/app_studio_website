@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:app_studio_webstie/Constants/AppColors.dart';
 import 'package:app_studio_webstie/Constants/AppImages.dart';
 import 'package:app_studio_webstie/Widgets/ResponsiveWidget.dart';
@@ -76,7 +78,8 @@ class ScreenshotSection extends StatelessWidget {
                     ),
                     SizedBox(height: 50),
                     InkWell(
-                      onTap: () {},
+                      onTap: () => Link(
+                          'https://apps.apple.com/ee/app/signary/id1575198986'),
                       child: Image.asset(
                         'assets/images/Icon App Store@2x.png',
                         width: 150,

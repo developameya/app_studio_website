@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:app_studio_webstie/Constants/AppColors.dart';
 import 'package:app_studio_webstie/Constants/AppImages.dart';
 import 'package:app_studio_webstie/Constants/AppText.dart';
@@ -8,7 +10,9 @@ TextFormatter _textFormatter = TextFormatter();
 
 class MobileHeroSection extends StatefulWidget {
   final Size screenSize;
-  const MobileHeroSection({Key? key, required this.screenSize})
+  final GlobalKey heroKey;
+  const MobileHeroSection(
+      {Key? key, required this.screenSize, required this.heroKey})
       : super(key: key);
 
   @override
@@ -28,6 +32,7 @@ class _MobileHeroSectionState extends State<MobileHeroSection> {
     return Stack(
       children: [
         Container(
+          key: widget.key,
           height: _containerHeight,
           decoration: BoxDecoration(
             gradient: radialGradient,
@@ -43,7 +48,10 @@ class _MobileHeroSectionState extends State<MobileHeroSection> {
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 40),
                 child: InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    print('mobile app store button tapped');
+                    Link('https://apps.apple.com/ee/app/signary/id1575198986');
+                  },
                   child: Image.asset(
                     appStoreIconImage,
                     width: 120,

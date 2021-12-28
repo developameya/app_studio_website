@@ -10,8 +10,12 @@ TextFormatter _textFormatter = TextFormatter();
 
 class MobileFeaturesSection extends StatefulWidget {
   final Size screenSize;
-  const MobileFeaturesSection({Key? key, required this.screenSize})
-      : super(key: key);
+  final GlobalKey featuresKey;
+  const MobileFeaturesSection({
+    Key? key,
+    required this.screenSize,
+    required this.featuresKey,
+  }) : super(key: key);
 
   @override
   _MobileFeaturesSectionState createState() => _MobileFeaturesSectionState();
@@ -21,6 +25,7 @@ class _MobileFeaturesSectionState extends State<MobileFeaturesSection> {
   @override
   Widget build(BuildContext context) {
     return Column(
+      key: widget.featuresKey,
       children: [
         _textFormatter.sectionHeader(
             text: featuresHeaderText, fontSize: 28, lineWidth: 400),

@@ -35,7 +35,13 @@ class _HomePageState extends State<HomePage> {
             downloadKey: downloadKey),
         body: SingleChildScrollView(
           child: ResponsiveWidget.isSmallScreen(context)
-              ? MobileHomePage(screenSize: screenSize)
+              ? MobileHomePage(
+                  screenSize: screenSize,
+                  heroKey: heroKey,
+                  screenshotKey: screenshotKey,
+                  featuresKey: featuresKey,
+                  downloadKey: downloadKey,
+                )
               : DesktopHomePage(
                   screenSize: screenSize,
                   heroKey: heroKey,

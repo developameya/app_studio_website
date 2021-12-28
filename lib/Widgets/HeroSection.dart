@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:app_studio_webstie/Constants/AppText.dart';
 import 'package:app_studio_webstie/Widgets/TextFormatter.dart';
 import 'package:app_studio_webstie/Widgets/ResponsiveWidget.dart';
@@ -65,7 +67,8 @@ class HeroSection extends StatelessWidget {
                       _textFormatter.heroSubHeader(text: heroHeaderBlurb),
                       SizedBox(height: 80),
                       InkWell(
-                        onTap: () {},
+                        onTap: () => Link(
+                            'https://apps.apple.com/ee/app/signary/id1575198986'),
                         child: Image.asset(
                           appStoreIconImage,
                           width: 150,
