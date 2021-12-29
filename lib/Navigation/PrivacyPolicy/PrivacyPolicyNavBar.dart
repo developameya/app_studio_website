@@ -1,8 +1,8 @@
 import 'package:app_studio_webstie/Widgets/NavBar.dart';
-import 'package:app_studio_webstie/Widgets/NavBarItem.dart';
+import 'package:app_studio_webstie/Widgets/NavItem.dart';
 import 'package:flutter/material.dart';
 
-NavBarItem _navBarItem = NavBarItem();
+NavItem _navBarItem = NavItem();
 
 class PrivacyPolicyNavBar extends NavBar {
   final BuildContext context;

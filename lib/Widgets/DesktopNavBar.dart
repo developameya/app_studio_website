@@ -1,9 +1,9 @@
-import 'package:app_studio_webstie/Widgets/NavBarItem.dart';
+import 'package:app_studio_webstie/Widgets/NavItem.dart';
 import 'package:app_studio_webstie/Widgets/ResponsiveWidget.dart';
 import 'package:app_studio_webstie/Constants/AppColors.dart';
 import 'package:flutter/material.dart';
 
-NavBarItem _navBarItem = NavBarItem();
+NavItem _navBarItem = NavItem();
 
 class DesktopNavBar extends StatefulWidget implements PreferredSizeWidget {
   final Size screenSize;

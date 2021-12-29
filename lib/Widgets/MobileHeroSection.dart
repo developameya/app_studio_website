@@ -1,12 +1,12 @@
-import 'dart:io';
-
 import 'package:app_studio_webstie/Constants/AppColors.dart';
 import 'package:app_studio_webstie/Constants/AppImages.dart';
 import 'package:app_studio_webstie/Constants/AppText.dart';
+import 'package:app_studio_webstie/Widgets/NavItem.dart';
 import 'package:flutter/material.dart';
 import 'TextFormatter.dart';
 
 TextFormatter _textFormatter = TextFormatter();
+NavItem _navItem = NavItem();
 
 class MobileHeroSection extends StatefulWidget {
   final Size screenSize;
@@ -47,16 +47,7 @@ class _MobileHeroSectionState extends State<MobileHeroSection> {
               _textFormatter.heroSubHeader(text: heroHeaderBlurb, fontSize: 20),
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 40),
-                child: InkWell(
-                  onTap: () {
-                    print('mobile app store button tapped');
-                    Link('https://apps.apple.com/ee/app/signary/id1575198986');
-                  },
-                  child: Image.asset(
-                    appStoreIconImage,
-                    width: 120,
-                  ),
-                ),
+                child: _navItem.AppStoreButton(),
               ),
               Image.asset(
                 heroImage,

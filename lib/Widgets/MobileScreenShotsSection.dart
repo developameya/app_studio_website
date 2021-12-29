@@ -1,10 +1,10 @@
-import 'dart:io';
-
 import 'package:app_studio_webstie/Constants/AppColors.dart';
 import 'package:app_studio_webstie/Constants/AppText.dart';
-import 'package:app_studio_webstie/Constants/AppImages.dart';
 import 'package:flutter/material.dart';
+import 'NavItem.dart';
 import 'TextFormatter.dart';
+
+NavItem _navItem = NavItem();
 
 TextFormatter _textFormatter = TextFormatter();
 
@@ -53,16 +53,9 @@ class _MobileScreenShotsSectionState extends State<MobileScreenShotsSection> {
               textColor: Colors.white,
             ),
             Padding(
+              key: widget.downloadKey,
               padding: const EdgeInsets.symmetric(vertical: 50),
-              child: InkWell(
-                key: widget.downloadKey,
-                onTap: () =>
-                    Link('https://apps.apple.com/ee/app/signary/id1575198986'),
-                child: Image.asset(
-                  appStoreIconImage,
-                  width: 120,
-                ),
-              ),
+              child: _navItem.AppStoreButton(),
             ),
           ],
         ),

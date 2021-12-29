@@ -1,14 +1,13 @@
-import 'dart:io';
-
 import 'package:app_studio_webstie/Constants/AppText.dart';
 import 'package:app_studio_webstie/Widgets/TextFormatter.dart';
 import 'package:app_studio_webstie/Widgets/ResponsiveWidget.dart';
 import 'package:app_studio_webstie/Constants/AppColors.dart';
 import 'package:flutter/material.dart';
-
 import '../Constants/AppImages.dart';
+import 'NavItem.dart';
 
 TextFormatter _textFormatter = TextFormatter();
+NavItem _navItem = NavItem();
 
 class HeroSection extends StatelessWidget {
   final Size screenSize;
@@ -66,14 +65,7 @@ class HeroSection extends StatelessWidget {
                       SizedBox(height: 5),
                       _textFormatter.heroSubHeader(text: heroHeaderBlurb),
                       SizedBox(height: 80),
-                      InkWell(
-                        onTap: () => Link(
-                            'https://apps.apple.com/ee/app/signary/id1575198986'),
-                        child: Image.asset(
-                          appStoreIconImage,
-                          width: 150,
-                        ),
-                      ),
+                      _navItem.AppStoreButton(),
                       SizedBox(height: 200),
                     ],
                   ),

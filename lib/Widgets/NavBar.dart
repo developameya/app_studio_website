@@ -1,9 +1,9 @@
 import 'package:app_studio_webstie/Constants/AppColors.dart';
-import 'package:app_studio_webstie/Widgets/NavBarItem.dart';
+import 'package:app_studio_webstie/Widgets/NavItem.dart';
 import 'package:app_studio_webstie/Widgets/ResponsiveWidget.dart';
 import 'package:flutter/material.dart';
 
-NavBarItem _navBarItem = NavBarItem();
+NavItem _navBarItem = NavItem();
 
 class NavBar extends StatefulWidget implements PreferredSizeWidget {
   final List<Widget> navButtonList;

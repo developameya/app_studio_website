@@ -1,8 +1,8 @@
-import 'package:app_studio_webstie/Widgets/NavBarItem.dart';
+import 'package:app_studio_webstie/Widgets/NavItem.dart';
 import '../../Widgets/NavBar.dart';
 import 'package:flutter/material.dart';
 
-NavBarItem _navBarItem = NavBarItem();
+NavItem _navBarItem = NavItem();
 
 class SupportNavBar extends NavBar {
   final BuildContext context;

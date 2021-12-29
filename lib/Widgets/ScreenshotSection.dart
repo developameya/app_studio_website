@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:app_studio_webstie/Constants/AppColors.dart';
 import 'package:app_studio_webstie/Constants/AppImages.dart';
 import 'package:app_studio_webstie/Widgets/ResponsiveWidget.dart';
@@ -8,7 +6,10 @@ import 'package:app_studio_webstie/Widgets/ScreenshotsRow.dart';
 import 'package:app_studio_webstie/Constants/AppText.dart';
 import 'package:app_studio_webstie/Widgets/TextFormatter.dart';
 
+import 'NavItem.dart';
+
 TextFormatter _textFormatter = TextFormatter();
+NavItem _navItem = NavItem();
 
 class ScreenshotSection extends StatelessWidget {
   final Size screenSize;
@@ -77,14 +78,7 @@ class ScreenshotSection extends StatelessWidget {
                       textColor: Colors.white,
                     ),
                     SizedBox(height: 50),
-                    InkWell(
-                      onTap: () => Link(
-                          'https://apps.apple.com/ee/app/signary/id1575198986'),
-                      child: Image.asset(
-                        'assets/images/Icon App Store@2x.png',
-                        width: 150,
-                      ),
-                    ),
+                    _navItem.AppStoreButton(),
                   ],
                 ),
                 SizedBox(height: 40),

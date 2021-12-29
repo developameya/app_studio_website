@@ -1,9 +1,42 @@
 import 'package:app_studio_webstie/Constants/AppImages.dart';
 import 'package:app_studio_webstie/Constants/NavigatonRoutes.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'NavButton.dart';
 
-class NavBarItem {
+class NavItem {
+  InkWell AppStoreButton() {
+    return InkWell(
+      onTap: () {
+        print('mobile app store button tapped');
+        launch(
+          'https://apps.apple.com/ee/app/signary/id1575198986',
+          forceWebView: true,
+        );
+      },
+      child: Image.asset(
+        appStoreIconImage,
+        width: 120,
+      ),
+    );
+  }
+
+  InkWell NavLogo(
+      {double? height, required BuildContext context, GlobalKey? heroKey}) {
+    return InkWell(
+      onTap: () {
+        if (ModalRoute.of(context)!.settings.name != routeHome) {
+          Navigator.popUntil(context, ModalRoute.withName(routeHome));
+        }
+        Scrollable.ensureVisible(heroKey!.currentContext ?? context);
+      },
+      child: Image.asset(
+        logoImage,
+        height: height,
+      ),
+    );
+  }
+
   List<Widget> HomeNavButtonList({
     required BuildContext context,
     double? verticalPadding,
@@ -181,21 +214,5 @@ class NavBarItem {
         },
       ),
     ];
-  }
-
-  InkWell NavLogo(
-      {double? height, required BuildContext context, GlobalKey? heroKey}) {
-    return InkWell(
-      onTap: () {
-        if (ModalRoute.of(context)!.settings.name != routeHome) {
-          Navigator.popUntil(context, ModalRoute.withName(routeHome));
-        }
-        Scrollable.ensureVisible(heroKey!.currentContext ?? context);
-      },
-      child: Image.asset(
-        logoImage,
-        height: height,
-      ),
-    );
   }
 }
