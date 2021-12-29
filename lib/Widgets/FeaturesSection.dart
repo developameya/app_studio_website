@@ -27,38 +27,46 @@ class FeaturesSection extends StatelessWidget {
         ),
         Row(
           children: [
-            FeaturesColumn(
-              imagePath: featuresImages[0],
-              headerText: _textList.getFeatures(at: 0).Header,
-              bodyText: _textList.getFeatures(at: 0).Body,
+            Expanded(
+              child: FeaturesColumn(
+                imagePath: featuresImages[0],
+                headerText: _textList.getFeatures(at: 0).Header,
+                bodyText: _textList.getFeatures(at: 0).Body,
+              ),
             ),
             SizedBox(
                 width: ResponsiveWidget.isMediumScreen(context)
                     ? screenSize.width / 30
                     : screenSize.width / 10),
-            FeaturesColumn(
-              imagePath: featuresImages[1],
-              headerText: _textList.getFeatures(at: 1).Header,
-              bodyText: _textList.getFeatures(at: 1).Body,
+            Expanded(
+              child: FeaturesColumn(
+                imagePath: featuresImages[1],
+                headerText: _textList.getFeatures(at: 1).Header,
+                bodyText: _textList.getFeatures(at: 1).Body,
+              ),
             ),
           ],
         ),
         SizedBox(height: 100),
         Row(
           children: [
-            FeaturesColumn(
-              imagePath: featuresImages[2],
-              headerText: _textList.getFeatures(at: 2).Header,
-              bodyText: _textList.getFeatures(at: 2).Body,
+            Expanded(
+              child: FeaturesColumn(
+                imagePath: featuresImages[2],
+                headerText: _textList.getFeatures(at: 2).Header,
+                bodyText: _textList.getFeatures(at: 2).Body,
+              ),
             ),
             SizedBox(
                 width: ResponsiveWidget.isMediumScreen(context)
                     ? screenSize.width / 30
                     : screenSize.width / 10),
-            FeaturesColumn(
-              imagePath: featuresImages[3],
-              headerText: _textList.getFeatures(at: 3).Header,
-              bodyText: _textList.getFeatures(at: 3).Body,
+            Expanded(
+              child: FeaturesColumn(
+                imagePath: featuresImages[3],
+                headerText: _textList.getFeatures(at: 3).Header,
+                bodyText: _textList.getFeatures(at: 3).Body,
+              ),
             ),
           ],
         ),
