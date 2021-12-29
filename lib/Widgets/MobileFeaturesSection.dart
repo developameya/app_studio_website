@@ -24,7 +24,7 @@ class MobileFeaturesSection extends StatefulWidget {
 class _MobileFeaturesSectionState extends State<MobileFeaturesSection> {
   @override
   Widget build(BuildContext context) {
-    double verticalPadding = 50.0;
+    double? verticalPadding = 50.0;
     return Column(
       key: widget.featuresKey,
       children: [
