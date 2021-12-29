@@ -11,9 +11,11 @@ NavItem _navItem = NavItem();
 class MobileHeroSection extends StatefulWidget {
   final Size screenSize;
   final GlobalKey heroKey;
-  const MobileHeroSection(
-      {Key? key, required this.screenSize, required this.heroKey})
-      : super(key: key);
+  const MobileHeroSection({
+    Key? key,
+    required this.screenSize,
+    required this.heroKey,
+  }) : super(key: key);
 
   @override
   _MobileHeroSectionState createState() => _MobileHeroSectionState();
@@ -24,7 +26,8 @@ class _MobileHeroSectionState extends State<MobileHeroSection> {
   @override
   void initState() {
     super.initState();
-    _containerHeight = widget.screenSize.width * 1.3;
+    //fixed the container height as it was incorrectly resizing while transforming from desktop to mobile layout.
+    _containerHeight = 50 * 12;
   }
 
   @override

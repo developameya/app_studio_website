@@ -3,7 +3,7 @@ import 'Text.dart';
 class TextList {
   List<Text> _featuresList = [
     Text(
-      Header: 'ALL THE APP ON ONE SINGLE LINE',
+      Header: 'ALL THE APP ON ONE LINE',
       Body:
           'here’s an icon on the top right, tap on it and you’ll create a new note',
     ),

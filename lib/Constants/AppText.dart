@@ -8,7 +8,6 @@ const appStoreHeaderText = 'Find Signary on the App Store';
 const contactBodyText = 'Hello, I’m Ameya! \n' +
     '\n' +
     'I run Ameya’s App Studio and handle all the support myself. You can get in touch with me on the email below.\n' +
-    'I run Ameya’s App Studio and handle all the support myself. You can get in touch with me on the email below.\n' +
     '\n' +
     'I’m devoted to resolve any issues with our apps. I would love to help if you have any concern.\n' +
     '\n' +

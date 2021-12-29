@@ -3,6 +3,7 @@ import 'package:app_studio_webstie/Constants/NavigatonRoutes.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'NavButton.dart';
+import 'ResponsiveWidget.dart';
 
 class NavItem {
   InkWell AppStoreButton() {
@@ -51,7 +52,10 @@ class NavItem {
           verticaPadding: verticalPadding,
           horizontalPadding: horizontalPadding,
           onTap: () {
-            Navigator.pop(context);
+            if (ResponsiveWidget.isSmallScreen(context)) {
+              Navigator.pop(context);
+            }
+            ;
             if (ModalRoute.of(context)!.settings.name != routeHome) {
               Navigator.popUntil(context, ModalRoute.withName(routeHome));
             } else {
@@ -64,7 +68,9 @@ class NavItem {
         verticaPadding: verticalPadding,
         horizontalPadding: horizontalPadding,
         onTap: () {
-          Navigator.pop(context);
+          if (ResponsiveWidget.isSmallScreen(context)) {
+            Navigator.pop(context);
+          }
           if (ModalRoute.of(context)!.settings.name != routeHome) {
             Navigator.popUntil(context, ModalRoute.withName(routeHome));
           } else {
@@ -78,7 +84,9 @@ class NavItem {
         verticaPadding: verticalPadding,
         horizontalPadding: horizontalPadding,
         onTap: () {
-          Navigator.pop(context);
+          if (ResponsiveWidget.isSmallScreen(context)) {
+            Navigator.pop(context);
+          }
           if (ModalRoute.of(context)!.settings.name != routeHome) {
             Navigator.popUntil(context, ModalRoute.withName(routeHome));
           } else {
@@ -92,7 +100,9 @@ class NavItem {
         verticaPadding: verticalPadding,
         horizontalPadding: horizontalPadding,
         onTap: () {
-          Navigator.pop(context);
+          if (ResponsiveWidget.isSmallScreen(context)) {
+            Navigator.pop(context);
+          }
           bool isNewRouteSameAsCurrentRoute = false;
           Navigator.popUntil(
             context,
