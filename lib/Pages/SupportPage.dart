@@ -26,7 +26,8 @@ class SupportPage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Container(
           width: screenSize.width,
-          height: screenSize.height,
+          //increase the height of the container for to increase the scrollable area.
+          height: screenSize.height * 1.1,
           decoration: BoxDecoration(
             gradient: radialGradient,
           ),
