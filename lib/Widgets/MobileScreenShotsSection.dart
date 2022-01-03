@@ -1,12 +1,14 @@
 import 'package:app_studio_webstie/Constants/AppColors.dart';
+import 'package:app_studio_webstie/Constants/AppImages.dart';
 import 'package:app_studio_webstie/Constants/AppText.dart';
 import 'package:flutter/material.dart';
 import 'NavItem.dart';
+import 'ScreenshotsContent.dart';
 import 'TextFormatter.dart';
 
 NavItem _navItem = NavItem();
-
 TextFormatter _textFormatter = TextFormatter();
+const double margin = 30;
 
 class MobileScreenShotsSection extends StatefulWidget {
   final Size screenSize;
@@ -36,15 +38,48 @@ class _MobileScreenShotsSectionState extends State<MobileScreenShotsSection> {
         ),
         Column(
           key: widget.screenshotKey,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             _textFormatter.sectionHeader(
               text: screenshotHeaderText,
               lineWidth: 250,
             ),
-            // Padding(
-            //   padding: const EdgeInsets.symmetric(vertical: 8.0),
-            //   child: ScreenshotsSlideshow(),
-            // ),
+            SizedBox(height: margin),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    ScreenshotContent(
+                      imagePath: screenshots[0],
+                      screenSize: widget.screenSize,
+                    ),
+                    SizedBox(width: margin),
+                    ScreenshotContent(
+                      imagePath: screenshots[1],
+                      screenSize: widget.screenSize,
+                    )
+                  ],
+                ),
+                SizedBox(height: margin),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    ScreenshotContent(
+                      imagePath: screenshots[2],
+                      screenSize: widget.screenSize,
+                    ),
+                    SizedBox(width: margin),
+                    ScreenshotContent(
+                      imagePath: screenshots[3],
+                      screenSize: widget.screenSize,
+                    )
+                  ],
+                ),
+              ],
+            ),
+            SizedBox(height: margin),
             _textFormatter.sectionHeader(
               text: appStoreHeaderText,
               fontSize: 28,

@@ -2,7 +2,7 @@ import 'package:app_studio_webstie/Constants/AppColors.dart';
 import 'package:app_studio_webstie/Constants/AppImages.dart';
 import 'package:app_studio_webstie/Widgets/ResponsiveWidget.dart';
 import 'package:flutter/material.dart';
-import 'package:app_studio_webstie/Widgets/ScreenshotsRow.dart';
+import 'package:app_studio_webstie/Widgets/ScreenshotsContent.dart';
 import 'package:app_studio_webstie/Constants/AppText.dart';
 import 'package:app_studio_webstie/Widgets/TextFormatter.dart';
 
@@ -49,19 +49,19 @@ class ScreenshotSection extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    ScreenshotsRow(
+                    ScreenshotContent(
                       imagePath: screenshots[0],
                       screenSize: screenSize,
                     ),
-                    ScreenshotsRow(
+                    ScreenshotContent(
                       imagePath: screenshots[1],
                       screenSize: screenSize,
                     ),
-                    ScreenshotsRow(
+                    ScreenshotContent(
                       imagePath: screenshots[2],
                       screenSize: screenSize,
                     ),
-                    ScreenshotsRow(
+                    ScreenshotContent(
                       imagePath: screenshots[3],
                       screenSize: screenSize,
                     ),

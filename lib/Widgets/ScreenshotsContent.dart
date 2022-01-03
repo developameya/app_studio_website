@@ -1,11 +1,11 @@
 import 'package:app_studio_webstie/Widgets/ResponsiveWidget.dart';
 import 'package:flutter/material.dart';
 
-class ScreenshotsRow extends StatelessWidget {
+class ScreenshotContent extends StatelessWidget {
   final String imagePath;
-  final Size screenSize;
+  final Size? screenSize;
 
-  ScreenshotsRow({required this.imagePath, required this.screenSize});
+  ScreenshotContent({required this.imagePath, this.screenSize});
 
   @override
   Widget build(BuildContext context) {
@@ -29,8 +29,10 @@ class ScreenshotsRow extends StatelessWidget {
       child: Image.asset(
         imagePath,
         height: ResponsiveWidget.isMediumScreen(context)
-            ? screenSize.width / 2
-            : screenSize.width / 2.5,
+            ? (screenSize?.width ?? 1200) / 2
+            : ResponsiveWidget.isSmallScreen(context)
+                ? 50 * 8
+                : (screenSize?.width ?? 1200) / 2.5,
       ),
     );
   }
