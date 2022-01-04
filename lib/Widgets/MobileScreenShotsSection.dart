@@ -42,48 +42,52 @@ class _MobileScreenShotsSectionState extends State<MobileScreenShotsSection> {
           children: [
             _textFormatter.sectionHeader(
               text: screenshotHeaderText,
-              lineWidth: 250,
+              fontSize: 32,
+              lineWidth: 230,
             ),
             SizedBox(height: margin),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    ScreenshotContent(
-                      imagePath: screenshots[0],
-                      screenSize: widget.screenSize,
-                    ),
-                    SizedBox(width: margin),
-                    ScreenshotContent(
-                      imagePath: screenshots[1],
-                      screenSize: widget.screenSize,
-                    )
-                  ],
-                ),
-                SizedBox(height: margin),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    ScreenshotContent(
-                      imagePath: screenshots[2],
-                      screenSize: widget.screenSize,
-                    ),
-                    SizedBox(width: margin),
-                    ScreenshotContent(
-                      imagePath: screenshots[3],
-                      screenSize: widget.screenSize,
-                    )
-                  ],
-                ),
-              ],
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      ScreenshotContent(
+                        imagePath: screenshots[0],
+                        screenSize: widget.screenSize,
+                      ),
+                      SizedBox(width: margin),
+                      ScreenshotContent(
+                        imagePath: screenshots[1],
+                        screenSize: widget.screenSize,
+                      )
+                    ],
+                  ),
+                  SizedBox(height: margin),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      ScreenshotContent(
+                        imagePath: screenshots[2],
+                        screenSize: widget.screenSize,
+                      ),
+                      SizedBox(width: margin),
+                      ScreenshotContent(
+                        imagePath: screenshots[3],
+                        screenSize: widget.screenSize,
+                      )
+                    ],
+                  ),
+                ],
+              ),
             ),
             SizedBox(height: margin),
             _textFormatter.sectionHeader(
               text: appStoreHeaderText,
-              fontSize: 28,
-              lineWidth: 420,
+              fontSize: 32,
+              lineWidth: 320,
               lineColor: secondaryColor,
               textColor: Colors.white,
             ),

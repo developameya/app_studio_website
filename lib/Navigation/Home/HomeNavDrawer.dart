@@ -21,6 +21,7 @@ class HomeNavDrawer extends NavDrawer {
           screenSize: screenSize,
           navButtonList: _navBarItem.HomeNavButtonList(
             context: context,
+            verticalPadding: 10.0,
             featuresKey: featuresKey,
             screenshotKey: screenshotKey,
             downloadKey: downloadKey,

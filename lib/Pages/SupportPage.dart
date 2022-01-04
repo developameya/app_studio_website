@@ -26,35 +26,33 @@ class SupportPage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Container(
           width: screenSize.width,
-          //increase the height of the container for to increase the scrollable area.
-          height: screenSize.height * 1.1,
           decoration: BoxDecoration(
             gradient: radialGradient,
           ),
           child: Padding(
-            padding: ResponsiveWidget.isMediumScreen(context)
-                ? EdgeInsets.symmetric(
-                    horizontal: screenSize.width / 50,
-                    vertical: screenSize.width / 100)
-                : EdgeInsets.symmetric(
-                    horizontal: screenSize.width / 8,
-                    vertical: screenSize.width / 16),
-            child: Column(
-              children: [
-                _textFormatter.sectionHeader(
-                  text: contactHeaderText,
-                  lineWidth: 250,
-                  textColor: Colors.white,
-                  lineColor: secondaryColor,
-                ),
-                SizedBox(height: 50),
-                _textFormatter.body(
-                  text: contactBodyText,
-                  textColor: Colors.white,
-                ),
-              ],
-            ),
-          ),
+              padding: ResponsiveWidget.isMediumScreen(context)
+                  ? EdgeInsets.symmetric(
+                      horizontal: screenSize.width / 50,
+                      vertical: screenSize.width / 100)
+                  : EdgeInsets.symmetric(
+                      horizontal: screenSize.width / 8,
+                      vertical: screenSize.width / 16),
+              child: Column(
+                children: [
+                  _textFormatter.sectionHeader(
+                    text: contactHeaderText,
+                    lineWidth: 250,
+                    textColor: Colors.white,
+                    lineColor: secondaryColor,
+                  ),
+                  SizedBox(height: 50),
+                  _textFormatter.body(
+                    text: contactBodyText,
+                    textColor: Colors.white,
+                  ),
+                  SizedBox(height: 80),
+                ],
+              )),
         ),
       ),
       bottomSheet: Footer(

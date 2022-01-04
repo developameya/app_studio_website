@@ -31,7 +31,7 @@ class ScreenshotContent extends StatelessWidget {
         height: ResponsiveWidget.isMediumScreen(context)
             ? (screenSize?.width ?? 1200) / 2
             : ResponsiveWidget.isSmallScreen(context)
-                ? 50 * 8
+                ? (screenSize?.width ?? 1200) / 1.1
                 : (screenSize?.width ?? 1200) / 2.5,
       ),
     );

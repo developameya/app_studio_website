@@ -8,7 +8,7 @@ class TextFormatter {
       textAlign: TextAlign.center,
       style: TextStyle(
         fontFamily: 'Montserrat',
-        fontWeight: FontWeight.w100,
+        fontWeight: FontWeight.w500,
         color: Colors.white,
         fontSize: fontSize ?? 40,
       ),
@@ -21,7 +21,7 @@ class TextFormatter {
       textAlign: TextAlign.center,
       style: TextStyle(
         fontFamily: 'Montserrat',
-        fontWeight: FontWeight.w500,
+        fontWeight: FontWeight.w100,
         color: Colors.white,
         fontSize: fontSize ?? 28,
       ),
@@ -40,7 +40,8 @@ class TextFormatter {
     );
   }
 
-  Text featuresSubHeader({required String text, double? fontSize}) {
+  Text featuresSubHeader(
+      {required String text, double? fontSize, FontWeight? weight}) {
     return Text(
       text,
       textAlign: TextAlign.center,
@@ -75,7 +76,7 @@ class TextFormatter {
           textAlign: TextAlign.center,
           style: TextStyle(
             fontFamily: 'Montserrat',
-            fontWeight: FontWeight.w200,
+            fontWeight: FontWeight.w500,
             fontSize: fontSize ?? 40,
             color: textColor,
           ),

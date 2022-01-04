@@ -29,7 +29,7 @@ class _MobileFeaturesSectionState extends State<MobileFeaturesSection> {
       key: widget.featuresKey,
       children: [
         _textFormatter.sectionHeader(
-            text: featuresHeaderText, fontSize: 28, lineWidth: 400),
+            text: featuresHeaderText, fontSize: 32, lineWidth: 300),
         SizedBox(height: 10),
         FeaturesColumn(
           verticalPadding: verticalPadding,

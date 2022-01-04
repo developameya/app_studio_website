@@ -23,7 +23,7 @@ class _NavDrawerState extends State<NavDrawer> {
     super.initState();
     // _drawerSize = Size(50 * 5, 50 * 6);
     _drawerSize = Size(
-      widget.screenSize.width / 2,
+      widget.screenSize.width / 1.5,
       widget.screenSize.height,
     );
   }
