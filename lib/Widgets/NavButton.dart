@@ -5,14 +5,14 @@ TextFormatter _textFormatter = TextFormatter();
 
 class NavButton extends StatefulWidget {
   final void Function()? onTap;
-  final String title;
+  final String label;
   final double? fontSize;
   final double? verticaPadding;
   final double? horizontalPadding;
 
   NavButton({
     Key? key,
-    required this.title,
+    required this.label,
     this.fontSize,
     this.onTap,
     this.verticaPadding,
@@ -48,7 +48,7 @@ class _NavButtonState extends State<NavButton> {
           foregroundColor: MaterialStateProperty.resolveWith(getColor),
         ),
         onPressed: widget.onTap,
-        child: _textFormatter.navButtonText(text: widget.title),
+        child: _textFormatter.navButtonText(text: widget.label),
       ),
     );
   }

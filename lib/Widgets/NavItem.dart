@@ -48,7 +48,7 @@ class NavItem {
   }) {
     return <Widget>[
       NavButton(
-          title: 'features',
+          label: 'features',
           verticaPadding: verticalPadding,
           horizontalPadding: horizontalPadding,
           onTap: () {
@@ -64,7 +64,7 @@ class NavItem {
             ;
           }),
       NavButton(
-        title: 'screenshots',
+        label: 'screenshots',
         verticaPadding: verticalPadding,
         horizontalPadding: horizontalPadding,
         onTap: () {
@@ -80,7 +80,7 @@ class NavItem {
         },
       ),
       NavButton(
-        title: 'download',
+        label: 'download',
         verticaPadding: verticalPadding,
         horizontalPadding: horizontalPadding,
         onTap: () {
@@ -96,7 +96,7 @@ class NavItem {
         },
       ),
       NavButton(
-        title: 'support',
+        label: 'support',
         verticaPadding: verticalPadding,
         horizontalPadding: horizontalPadding,
         onTap: () {
@@ -130,7 +130,7 @@ class NavItem {
   }) {
     return <Widget>[
       NavButton(
-        title: 'terms of use',
+        label: 'terms of use',
         verticaPadding: verticalPadding,
         horizontalPadding: horizontalPadding,
         onTap: () {
@@ -138,7 +138,7 @@ class NavItem {
         },
       ),
       NavButton(
-        title: 'Privacy Policy',
+        label: 'Privacy Policy',
         verticaPadding: verticalPadding,
         horizontalPadding: horizontalPadding,
         onTap: () {
@@ -155,7 +155,7 @@ class NavItem {
   }) {
     return <Widget>[
       NavButton(
-        title: 'Privacy Policy',
+        label: 'Privacy Policy',
         verticaPadding: verticalPadding,
         horizontalPadding: horizontalPadding,
         onTap: () {
@@ -163,7 +163,7 @@ class NavItem {
         },
       ),
       NavButton(
-        title: 'support',
+        label: 'support',
         verticaPadding: verticalPadding,
         horizontalPadding: horizontalPadding,
         onTap: () {
@@ -194,7 +194,7 @@ class NavItem {
   }) {
     return <Widget>[
       NavButton(
-        title: 'TermsOfUse',
+        label: 'TermsOfUse',
         verticaPadding: verticalPadding,
         horizontalPadding: horizontalPadding,
         onTap: () {
@@ -202,7 +202,7 @@ class NavItem {
         },
       ),
       NavButton(
-        title: 'support',
+        label: 'support',
         verticaPadding: verticalPadding,
         horizontalPadding: horizontalPadding,
         onTap: () {

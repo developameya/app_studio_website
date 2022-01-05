@@ -3,6 +3,7 @@ import 'package:app_studio_webstie/Constants/AppText.dart';
 import 'package:app_studio_webstie/Navigation/Support/SupportNavBar.dart';
 import 'package:app_studio_webstie/Navigation/Support/SupportNavDrawer.dart';
 import 'package:app_studio_webstie/Widgets/Footer.dart';
+import 'package:app_studio_webstie/Widgets/NavButton.dart';
 import 'package:app_studio_webstie/Widgets/ResponsiveWidget.dart';
 import 'package:app_studio_webstie/Widgets/TextFormatter.dart';
 import 'package:flutter/material.dart';
@@ -15,6 +16,7 @@ class SupportPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
+    var isHovered = false;
     return Scaffold(
       appBar: SupportNavBar(
         context: context,
@@ -26,6 +28,7 @@ class SupportPage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Container(
           width: screenSize.width,
+          height: screenSize.height,
           decoration: BoxDecoration(
             gradient: radialGradient,
           ),
@@ -50,7 +53,11 @@ class SupportPage extends StatelessWidget {
                     text: contactBodyText,
                     textColor: Colors.white,
                   ),
-                  SizedBox(height: 80),
+                  SizedBox(height: 10),
+                  NavButton(
+                    label: 'support@appup.in',
+                    onTap: () {},
+                  ),
                 ],
               )),
         ),
