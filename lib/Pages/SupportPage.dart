@@ -7,6 +7,7 @@ import 'package:app_studio_webstie/Widgets/NavButton.dart';
 import 'package:app_studio_webstie/Widgets/ResponsiveWidget.dart';
 import 'package:app_studio_webstie/Widgets/TextFormatter.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 TextFormatter _textFormatter = TextFormatter();
 
@@ -56,7 +57,9 @@ class SupportPage extends StatelessWidget {
                   SizedBox(height: 10),
                   NavButton(
                     label: 'support@appup.in',
-                    onTap: () {},
+                    onTap: () {
+                      launch('mailto: support@appup.in');
+                    },
                   ),
                 ],
               )),
