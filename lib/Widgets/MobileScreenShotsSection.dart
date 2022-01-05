@@ -1,14 +1,25 @@
 import 'package:app_studio_webstie/Constants/AppColors.dart';
 import 'package:app_studio_webstie/Constants/AppImages.dart';
 import 'package:app_studio_webstie/Constants/AppText.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'NavItem.dart';
 import 'ScreenshotsContent.dart';
 import 'TextFormatter.dart';
+import 'package:app_studio_webstie/Constants/AppImages.dart';
 
 NavItem _navItem = NavItem();
 TextFormatter _textFormatter = TextFormatter();
 const double margin = 30;
+const BoxShadow shadow = BoxShadow(
+  color: Colors.black38,
+  blurRadius: 0.0, // soften the shadow
+  spreadRadius: 0.0, //extend the shadow
+  offset: Offset(
+    0.0, // Move to right 10  horizontally
+    0.0, // Move to bottom 10 Vertically
+  ),
+);
 
 class MobileScreenShotsSection extends StatefulWidget {
   final Size screenSize;
@@ -48,39 +59,35 @@ class _MobileScreenShotsSectionState extends State<MobileScreenShotsSection> {
             SizedBox(height: margin),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10.0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
+              child: Container(
+                child: CarouselSlider(
+                    items: [
                       ScreenshotContent(
                         imagePath: screenshots[0],
                         screenSize: widget.screenSize,
+                        shadow: shadow,
                       ),
-                      SizedBox(width: margin),
                       ScreenshotContent(
                         imagePath: screenshots[1],
                         screenSize: widget.screenSize,
-                      )
-                    ],
-                  ),
-                  SizedBox(height: margin),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
+                        shadow: shadow,
+                      ),
                       ScreenshotContent(
                         imagePath: screenshots[2],
                         screenSize: widget.screenSize,
+                        shadow: shadow,
                       ),
-                      SizedBox(width: margin),
                       ScreenshotContent(
                         imagePath: screenshots[3],
                         screenSize: widget.screenSize,
-                      )
+                        shadow: shadow,
+                      ),
                     ],
-                  ),
-                ],
+                    options: CarouselOptions(
+                      height: widget.screenSize.width / 1.1,
+                      autoPlay: true,
+                      enlargeCenterPage: true,
+                    )),
               ),
             ),
             SizedBox(height: margin),

@@ -8,6 +8,7 @@ import 'package:app_studio_webstie/Widgets/ResponsiveWidget.dart';
 import 'package:app_studio_webstie/Widgets/TextFormatter.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 
 TextFormatter _textFormatter = TextFormatter();
 
@@ -17,7 +18,6 @@ class SupportPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
-    var isHovered = false;
     return Scaffold(
       appBar: SupportNavBar(
         context: context,
